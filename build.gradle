@@ -35,6 +35,7 @@ dependencies {
     jooqGenerator 'com.mysql:mysql-connector-j'
     jooqGenerator "org.jooq:jooq:${jooqVersion}"
     jooqGenerator "org.jooq:jooq-meta:${jooqVersion}"
+    jooqGenerator project('jooq-custom')
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

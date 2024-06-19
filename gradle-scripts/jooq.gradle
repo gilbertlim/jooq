@@ -17,6 +17,7 @@ jooq {
                     name = 'org.jooq.codegen.DefaultGenerator'
                     database { // DB를 기준으로 DSL을 생성
                         name = 'org.jooq.meta.mysql.MySQLDatabase'
+                        unsignedTypes = false // Unsigned Type을 사용하지 않도록 설정
                         schemata {
                             schema {
                                 inputSchema = 'sakila'
@@ -33,6 +34,9 @@ jooq {
                     target { // DSL이 생성되는 폴더
                         directory = 'src/generated'
                     }
+
+                    // 왜 서브모듈로 분리해야할까 ?
+                    strategy.name = 'jooq.custom.generator.JPrefixGeneratorStrategy'
                 }
             }
         }
