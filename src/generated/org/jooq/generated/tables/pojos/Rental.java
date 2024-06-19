@@ -18,10 +18,10 @@ public class Rental implements Serializable {
 
     private Integer rentalId;
     private LocalDateTime rentalDate;
-    private Integer inventoryId;
-    private Integer customerId;
+    private Long inventoryId;
+    private Long customerId;
     private LocalDateTime returnDate;
-    private Integer staffId;
+    private Long staffId;
     private LocalDateTime lastUpdate;
 
     public Rental() {}
@@ -39,10 +39,10 @@ public class Rental implements Serializable {
     public Rental(
         Integer rentalId,
         LocalDateTime rentalDate,
-        Integer inventoryId,
-        Integer customerId,
+        Long inventoryId,
+        Long customerId,
         LocalDateTime returnDate,
-        Integer staffId,
+        Long staffId,
         LocalDateTime lastUpdate
     ) {
         this.rentalId = rentalId;
@@ -87,14 +87,14 @@ public class Rental implements Serializable {
     /**
      * Getter for <code>sakila.rental.inventory_id</code>.
      */
-    public Integer getInventoryId() {
+    public Long getInventoryId() {
         return this.inventoryId;
     }
 
     /**
      * Setter for <code>sakila.rental.inventory_id</code>.
      */
-    public Rental setInventoryId(Integer inventoryId) {
+    public Rental setInventoryId(Long inventoryId) {
         this.inventoryId = inventoryId;
         return this;
     }
@@ -102,14 +102,14 @@ public class Rental implements Serializable {
     /**
      * Getter for <code>sakila.rental.customer_id</code>.
      */
-    public Integer getCustomerId() {
+    public Long getCustomerId() {
         return this.customerId;
     }
 
     /**
      * Setter for <code>sakila.rental.customer_id</code>.
      */
-    public Rental setCustomerId(Integer customerId) {
+    public Rental setCustomerId(Long customerId) {
         this.customerId = customerId;
         return this;
     }
@@ -132,14 +132,14 @@ public class Rental implements Serializable {
     /**
      * Getter for <code>sakila.rental.staff_id</code>.
      */
-    public Integer getStaffId() {
+    public Long getStaffId() {
         return this.staffId;
     }
 
     /**
      * Setter for <code>sakila.rental.staff_id</code>.
      */
-    public Rental setStaffId(Integer staffId) {
+    public Rental setStaffId(Long staffId) {
         this.staffId = staffId;
         return this;
     }

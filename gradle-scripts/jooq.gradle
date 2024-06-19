@@ -17,7 +17,24 @@ jooq {
                     name = 'org.jooq.codegen.DefaultGenerator'
                     database { // DB를 기준으로 DSL을 생성
                         name = 'org.jooq.meta.mysql.MySQLDatabase'
-                        unsignedTypes = false // Unsigned Type을 사용하지 않도록 설정
+
+                        //unsignedTypes = false // Unsigned Type을 사용하지 않도록 설정(Integer)
+                        unsignedTypes = true // true로 두고, forcedTypes를 통해 타입을 강제변환
+                        forcedTypes {
+                            forcedType {
+                                userType = 'java.lang.Long'
+                                includeTypes = 'int unsigned'
+                            }
+                            forcedType {
+                                userType = 'java.lang.Integer'
+                                includeTypes = 'tinyint unsigned'
+                            }
+                            forcedType {
+                                userType = 'java.lang.Integer'
+                                includeTypes = 'smallint unsigned'
+                            }
+                        }
+
                         schemata {
                             schema {
                                 inputSchema = 'sakila'
@@ -43,7 +60,7 @@ jooq {
     }
 }
 
-sourceSets { // src/generated 폴더의 파일들도 소스코드에 포함
+sourceSets { // src/generated 폴더의 파일들도 소스에 포함
     main {
         java {
             srcDirs = ["src/main/java", "src/generated"]

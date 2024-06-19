@@ -7,7 +7,7 @@ package org.jooq.generated.tables.records;
 import java.math.BigDecimal;
 
 import org.jooq.generated.enums.FilmListRating;
-import org.jooq.generated.tables.JFilmList;
+import org.jooq.generated.tables.FilmList_;
 import org.jooq.generated.tables.pojos.FilmList;
 import org.jooq.impl.TableRecordImpl;
 
@@ -23,7 +23,7 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Setter for <code>sakila.film_list.FID</code>.
      */
-    public FilmListRecord setFid(Integer value) {
+    public FilmListRecord setFid(Long value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Getter for <code>sakila.film_list.FID</code>.
      */
-    public Integer getFid() {
-        return (Integer) get(0);
+    public Long getFid() {
+        return (Long) get(0);
     }
 
     /**
@@ -98,7 +98,7 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Setter for <code>sakila.film_list.length</code>.
      */
-    public FilmListRecord setLength(Short value) {
+    public FilmListRecord setLength(Integer value) {
         set(5, value);
         return this;
     }
@@ -106,8 +106,8 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Getter for <code>sakila.film_list.length</code>.
      */
-    public Short getLength() {
-        return (Short) get(5);
+    public Integer getLength() {
+        return (Integer) get(5);
     }
 
     /**
@@ -148,14 +148,14 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
      * Create a detached FilmListRecord
      */
     public FilmListRecord() {
-        super(JFilmList.FILM_LIST);
+        super(FilmList_.FILM_LIST);
     }
 
     /**
      * Create a detached, initialised FilmListRecord
      */
-    public FilmListRecord(Integer fid, String title, String description, String category, BigDecimal price, Short length, FilmListRating rating, String actors) {
-        super(JFilmList.FILM_LIST);
+    public FilmListRecord(Long fid, String title, String description, String category, BigDecimal price, Integer length, FilmListRating rating, String actors) {
+        super(FilmList_.FILM_LIST);
 
         setFid(fid);
         setTitle(title);
@@ -172,7 +172,7 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
      * Create a detached, initialised FilmListRecord
      */
     public FilmListRecord(FilmList value) {
-        super(JFilmList.FILM_LIST);
+        super(FilmList_.FILM_LIST);
 
         if (value != null) {
             setFid(value.getFid());

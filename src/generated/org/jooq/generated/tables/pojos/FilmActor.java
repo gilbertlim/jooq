@@ -16,8 +16,8 @@ public class FilmActor implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer actorId;
-    private Integer filmId;
+    private Long actorId;
+    private Long filmId;
     private LocalDateTime lastUpdate;
 
     public FilmActor() {}
@@ -29,8 +29,8 @@ public class FilmActor implements Serializable {
     }
 
     public FilmActor(
-        Integer actorId,
-        Integer filmId,
+        Long actorId,
+        Long filmId,
         LocalDateTime lastUpdate
     ) {
         this.actorId = actorId;
@@ -41,14 +41,14 @@ public class FilmActor implements Serializable {
     /**
      * Getter for <code>sakila.film_actor.actor_id</code>.
      */
-    public Integer getActorId() {
+    public Long getActorId() {
         return this.actorId;
     }
 
     /**
      * Setter for <code>sakila.film_actor.actor_id</code>.
      */
-    public FilmActor setActorId(Integer actorId) {
+    public FilmActor setActorId(Long actorId) {
         this.actorId = actorId;
         return this;
     }
@@ -56,14 +56,14 @@ public class FilmActor implements Serializable {
     /**
      * Getter for <code>sakila.film_actor.film_id</code>.
      */
-    public Integer getFilmId() {
+    public Long getFilmId() {
         return this.filmId;
     }
 
     /**
      * Setter for <code>sakila.film_actor.film_id</code>.
      */
-    public FilmActor setFilmId(Integer filmId) {
+    public FilmActor setFilmId(Long filmId) {
         this.filmId = filmId;
         return this;
     }

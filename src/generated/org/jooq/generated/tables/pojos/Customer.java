@@ -16,12 +16,12 @@ public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer customerId;
-    private Integer storeId;
+    private Long customerId;
+    private Long storeId;
     private String firstName;
     private String lastName;
     private String email;
-    private Integer addressId;
+    private Long addressId;
     private Byte active;
     private LocalDateTime createDate;
     private LocalDateTime lastUpdate;
@@ -41,12 +41,12 @@ public class Customer implements Serializable {
     }
 
     public Customer(
-        Integer customerId,
-        Integer storeId,
+        Long customerId,
+        Long storeId,
         String firstName,
         String lastName,
         String email,
-        Integer addressId,
+        Long addressId,
         Byte active,
         LocalDateTime createDate,
         LocalDateTime lastUpdate
@@ -65,14 +65,14 @@ public class Customer implements Serializable {
     /**
      * Getter for <code>sakila.customer.customer_id</code>.
      */
-    public Integer getCustomerId() {
+    public Long getCustomerId() {
         return this.customerId;
     }
 
     /**
      * Setter for <code>sakila.customer.customer_id</code>.
      */
-    public Customer setCustomerId(Integer customerId) {
+    public Customer setCustomerId(Long customerId) {
         this.customerId = customerId;
         return this;
     }
@@ -80,14 +80,14 @@ public class Customer implements Serializable {
     /**
      * Getter for <code>sakila.customer.store_id</code>.
      */
-    public Integer getStoreId() {
+    public Long getStoreId() {
         return this.storeId;
     }
 
     /**
      * Setter for <code>sakila.customer.store_id</code>.
      */
-    public Customer setStoreId(Integer storeId) {
+    public Customer setStoreId(Long storeId) {
         this.storeId = storeId;
         return this;
     }
@@ -140,14 +140,14 @@ public class Customer implements Serializable {
     /**
      * Getter for <code>sakila.customer.address_id</code>.
      */
-    public Integer getAddressId() {
+    public Long getAddressId() {
         return this.addressId;
     }
 
     /**
      * Setter for <code>sakila.customer.address_id</code>.
      */
-    public Customer setAddressId(Integer addressId) {
+    public Customer setAddressId(Long addressId) {
         this.addressId = addressId;
         return this;
     }

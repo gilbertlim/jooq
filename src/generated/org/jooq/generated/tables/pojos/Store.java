@@ -16,9 +16,9 @@ public class Store implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer storeId;
-    private Integer managerStaffId;
-    private Integer addressId;
+    private Long storeId;
+    private Long managerStaffId;
+    private Long addressId;
     private LocalDateTime lastUpdate;
 
     public Store() {}
@@ -31,9 +31,9 @@ public class Store implements Serializable {
     }
 
     public Store(
-        Integer storeId,
-        Integer managerStaffId,
-        Integer addressId,
+        Long storeId,
+        Long managerStaffId,
+        Long addressId,
         LocalDateTime lastUpdate
     ) {
         this.storeId = storeId;
@@ -45,14 +45,14 @@ public class Store implements Serializable {
     /**
      * Getter for <code>sakila.store.store_id</code>.
      */
-    public Integer getStoreId() {
+    public Long getStoreId() {
         return this.storeId;
     }
 
     /**
      * Setter for <code>sakila.store.store_id</code>.
      */
-    public Store setStoreId(Integer storeId) {
+    public Store setStoreId(Long storeId) {
         this.storeId = storeId;
         return this;
     }
@@ -60,14 +60,14 @@ public class Store implements Serializable {
     /**
      * Getter for <code>sakila.store.manager_staff_id</code>.
      */
-    public Integer getManagerStaffId() {
+    public Long getManagerStaffId() {
         return this.managerStaffId;
     }
 
     /**
      * Setter for <code>sakila.store.manager_staff_id</code>.
      */
-    public Store setManagerStaffId(Integer managerStaffId) {
+    public Store setManagerStaffId(Long managerStaffId) {
         this.managerStaffId = managerStaffId;
         return this;
     }
@@ -75,14 +75,14 @@ public class Store implements Serializable {
     /**
      * Getter for <code>sakila.store.address_id</code>.
      */
-    public Integer getAddressId() {
+    public Long getAddressId() {
         return this.addressId;
     }
 
     /**
      * Setter for <code>sakila.store.address_id</code>.
      */
-    public Store setAddressId(Integer addressId) {
+    public Store setAddressId(Long addressId) {
         this.addressId = addressId;
         return this;
     }

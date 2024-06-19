@@ -28,7 +28,7 @@ public class DefaultCatalog extends CatalogImpl {
     /**
      * The schema <code>sakila</code>.
      */
-    public final JSakila SAKILA = JSakila.SAKILA;
+    public final Sakila_ SAKILA = Sakila_.SAKILA;
 
     /**
      * No further instances allowed
@@ -40,7 +40,7 @@ public class DefaultCatalog extends CatalogImpl {
     @Override
     public final List<Schema> getSchemas() {
         return Arrays.asList(
-            JSakila.SAKILA
+            Sakila_.SAKILA
         );
     }
 

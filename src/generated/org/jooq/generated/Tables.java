@@ -4,29 +4,29 @@
 package org.jooq.generated;
 
 
-import org.jooq.generated.tables.JActor;
-import org.jooq.generated.tables.JActorInfo;
-import org.jooq.generated.tables.JAddress;
-import org.jooq.generated.tables.JCategory;
-import org.jooq.generated.tables.JCity;
-import org.jooq.generated.tables.JCountry;
-import org.jooq.generated.tables.JCustomer;
-import org.jooq.generated.tables.JCustomerList;
-import org.jooq.generated.tables.JFilm;
-import org.jooq.generated.tables.JFilmActor;
-import org.jooq.generated.tables.JFilmCategory;
-import org.jooq.generated.tables.JFilmList;
-import org.jooq.generated.tables.JFilmText;
-import org.jooq.generated.tables.JInventory;
-import org.jooq.generated.tables.JLanguage;
-import org.jooq.generated.tables.JNicerButSlowerFilmList;
-import org.jooq.generated.tables.JPayment;
-import org.jooq.generated.tables.JRental;
-import org.jooq.generated.tables.JSalesByFilmCategory;
-import org.jooq.generated.tables.JSalesByStore;
-import org.jooq.generated.tables.JStaff;
-import org.jooq.generated.tables.JStaffList;
-import org.jooq.generated.tables.JStore;
+import org.jooq.generated.tables.ActorInfo_;
+import org.jooq.generated.tables.Actor_;
+import org.jooq.generated.tables.Address_;
+import org.jooq.generated.tables.Category_;
+import org.jooq.generated.tables.City_;
+import org.jooq.generated.tables.Country_;
+import org.jooq.generated.tables.CustomerList_;
+import org.jooq.generated.tables.Customer_;
+import org.jooq.generated.tables.FilmActor_;
+import org.jooq.generated.tables.FilmCategory_;
+import org.jooq.generated.tables.FilmList_;
+import org.jooq.generated.tables.FilmText_;
+import org.jooq.generated.tables.Film_;
+import org.jooq.generated.tables.Inventory_;
+import org.jooq.generated.tables.Language_;
+import org.jooq.generated.tables.NicerButSlowerFilmList_;
+import org.jooq.generated.tables.Payment_;
+import org.jooq.generated.tables.Rental_;
+import org.jooq.generated.tables.SalesByFilmCategory_;
+import org.jooq.generated.tables.SalesByStore_;
+import org.jooq.generated.tables.StaffList_;
+import org.jooq.generated.tables.Staff_;
+import org.jooq.generated.tables.Store_;
 
 
 /**
@@ -38,115 +38,115 @@ public class Tables {
     /**
      * The table <code>sakila.actor</code>.
      */
-    public static final JActor ACTOR = JActor.ACTOR;
+    public static final Actor_ ACTOR = Actor_.ACTOR;
 
     /**
      * VIEW
      */
-    public static final JActorInfo ACTOR_INFO = JActorInfo.ACTOR_INFO;
+    public static final ActorInfo_ ACTOR_INFO = ActorInfo_.ACTOR_INFO;
 
     /**
      * The table <code>sakila.address</code>.
      */
-    public static final JAddress ADDRESS = JAddress.ADDRESS;
+    public static final Address_ ADDRESS = Address_.ADDRESS;
 
     /**
      * The table <code>sakila.category</code>.
      */
-    public static final JCategory CATEGORY = JCategory.CATEGORY;
+    public static final Category_ CATEGORY = Category_.CATEGORY;
 
     /**
      * The table <code>sakila.city</code>.
      */
-    public static final JCity CITY = JCity.CITY;
+    public static final City_ CITY = City_.CITY;
 
     /**
      * The table <code>sakila.country</code>.
      */
-    public static final JCountry COUNTRY = JCountry.COUNTRY;
+    public static final Country_ COUNTRY = Country_.COUNTRY;
 
     /**
      * The table <code>sakila.customer</code>.
      */
-    public static final JCustomer CUSTOMER = JCustomer.CUSTOMER;
+    public static final Customer_ CUSTOMER = Customer_.CUSTOMER;
 
     /**
      * VIEW
      */
-    public static final JCustomerList CUSTOMER_LIST = JCustomerList.CUSTOMER_LIST;
+    public static final CustomerList_ CUSTOMER_LIST = CustomerList_.CUSTOMER_LIST;
 
     /**
      * The table <code>sakila.film</code>.
      */
-    public static final JFilm FILM = JFilm.FILM;
+    public static final Film_ FILM = Film_.FILM;
 
     /**
      * The table <code>sakila.film_actor</code>.
      */
-    public static final JFilmActor FILM_ACTOR = JFilmActor.FILM_ACTOR;
+    public static final FilmActor_ FILM_ACTOR = FilmActor_.FILM_ACTOR;
 
     /**
      * The table <code>sakila.film_category</code>.
      */
-    public static final JFilmCategory FILM_CATEGORY = JFilmCategory.FILM_CATEGORY;
+    public static final FilmCategory_ FILM_CATEGORY = FilmCategory_.FILM_CATEGORY;
 
     /**
      * VIEW
      */
-    public static final JFilmList FILM_LIST = JFilmList.FILM_LIST;
+    public static final FilmList_ FILM_LIST = FilmList_.FILM_LIST;
 
     /**
      * The table <code>sakila.film_text</code>.
      */
-    public static final JFilmText FILM_TEXT = JFilmText.FILM_TEXT;
+    public static final FilmText_ FILM_TEXT = FilmText_.FILM_TEXT;
 
     /**
      * The table <code>sakila.inventory</code>.
      */
-    public static final JInventory INVENTORY = JInventory.INVENTORY;
+    public static final Inventory_ INVENTORY = Inventory_.INVENTORY;
 
     /**
      * The table <code>sakila.language</code>.
      */
-    public static final JLanguage LANGUAGE = JLanguage.LANGUAGE;
+    public static final Language_ LANGUAGE = Language_.LANGUAGE;
 
     /**
      * VIEW
      */
-    public static final JNicerButSlowerFilmList NICER_BUT_SLOWER_FILM_LIST = JNicerButSlowerFilmList.NICER_BUT_SLOWER_FILM_LIST;
+    public static final NicerButSlowerFilmList_ NICER_BUT_SLOWER_FILM_LIST = NicerButSlowerFilmList_.NICER_BUT_SLOWER_FILM_LIST;
 
     /**
      * The table <code>sakila.payment</code>.
      */
-    public static final JPayment PAYMENT = JPayment.PAYMENT;
+    public static final Payment_ PAYMENT = Payment_.PAYMENT;
 
     /**
      * The table <code>sakila.rental</code>.
      */
-    public static final JRental RENTAL = JRental.RENTAL;
+    public static final Rental_ RENTAL = Rental_.RENTAL;
 
     /**
      * VIEW
      */
-    public static final JSalesByFilmCategory SALES_BY_FILM_CATEGORY = JSalesByFilmCategory.SALES_BY_FILM_CATEGORY;
+    public static final SalesByFilmCategory_ SALES_BY_FILM_CATEGORY = SalesByFilmCategory_.SALES_BY_FILM_CATEGORY;
 
     /**
      * VIEW
      */
-    public static final JSalesByStore SALES_BY_STORE = JSalesByStore.SALES_BY_STORE;
+    public static final SalesByStore_ SALES_BY_STORE = SalesByStore_.SALES_BY_STORE;
 
     /**
      * The table <code>sakila.staff</code>.
      */
-    public static final JStaff STAFF = JStaff.STAFF;
+    public static final Staff_ STAFF = Staff_.STAFF;
 
     /**
      * VIEW
      */
-    public static final JStaffList STAFF_LIST = JStaffList.STAFF_LIST;
+    public static final StaffList_ STAFF_LIST = StaffList_.STAFF_LIST;
 
     /**
      * The table <code>sakila.store</code>.
      */
-    public static final JStore STORE = JStore.STORE;
+    public static final Store_ STORE = Store_.STORE;
 }

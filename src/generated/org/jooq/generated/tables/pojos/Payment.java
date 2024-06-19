@@ -17,9 +17,9 @@ public class Payment implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer paymentId;
-    private Integer customerId;
-    private Integer staffId;
+    private Long paymentId;
+    private Long customerId;
+    private Long staffId;
     private Integer rentalId;
     private BigDecimal amount;
     private LocalDateTime paymentDate;
@@ -38,9 +38,9 @@ public class Payment implements Serializable {
     }
 
     public Payment(
-        Integer paymentId,
-        Integer customerId,
-        Integer staffId,
+        Long paymentId,
+        Long customerId,
+        Long staffId,
         Integer rentalId,
         BigDecimal amount,
         LocalDateTime paymentDate,
@@ -58,14 +58,14 @@ public class Payment implements Serializable {
     /**
      * Getter for <code>sakila.payment.payment_id</code>.
      */
-    public Integer getPaymentId() {
+    public Long getPaymentId() {
         return this.paymentId;
     }
 
     /**
      * Setter for <code>sakila.payment.payment_id</code>.
      */
-    public Payment setPaymentId(Integer paymentId) {
+    public Payment setPaymentId(Long paymentId) {
         this.paymentId = paymentId;
         return this;
     }
@@ -73,14 +73,14 @@ public class Payment implements Serializable {
     /**
      * Getter for <code>sakila.payment.customer_id</code>.
      */
-    public Integer getCustomerId() {
+    public Long getCustomerId() {
         return this.customerId;
     }
 
     /**
      * Setter for <code>sakila.payment.customer_id</code>.
      */
-    public Payment setCustomerId(Integer customerId) {
+    public Payment setCustomerId(Long customerId) {
         this.customerId = customerId;
         return this;
     }
@@ -88,14 +88,14 @@ public class Payment implements Serializable {
     /**
      * Getter for <code>sakila.payment.staff_id</code>.
      */
-    public Integer getStaffId() {
+    public Long getStaffId() {
         return this.staffId;
     }
 
     /**
      * Setter for <code>sakila.payment.staff_id</code>.
      */
-    public Payment setStaffId(Integer staffId) {
+    public Payment setStaffId(Long staffId) {
         this.staffId = staffId;
         return this;
     }

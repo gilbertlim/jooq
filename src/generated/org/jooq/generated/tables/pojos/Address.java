@@ -16,11 +16,11 @@ public class Address implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer addressId;
+    private Long addressId;
     private String address;
     private String address2;
     private String district;
-    private Integer cityId;
+    private Long cityId;
     private String postalCode;
     private String phone;
     private LocalDateTime lastUpdate;
@@ -39,11 +39,11 @@ public class Address implements Serializable {
     }
 
     public Address(
-        Integer addressId,
+        Long addressId,
         String address,
         String address2,
         String district,
-        Integer cityId,
+        Long cityId,
         String postalCode,
         String phone,
         LocalDateTime lastUpdate
@@ -61,14 +61,14 @@ public class Address implements Serializable {
     /**
      * Getter for <code>sakila.address.address_id</code>.
      */
-    public Integer getAddressId() {
+    public Long getAddressId() {
         return this.addressId;
     }
 
     /**
      * Setter for <code>sakila.address.address_id</code>.
      */
-    public Address setAddressId(Integer addressId) {
+    public Address setAddressId(Long addressId) {
         this.addressId = addressId;
         return this;
     }
@@ -121,14 +121,14 @@ public class Address implements Serializable {
     /**
      * Getter for <code>sakila.address.city_id</code>.
      */
-    public Integer getCityId() {
+    public Long getCityId() {
         return this.cityId;
     }
 
     /**
      * Setter for <code>sakila.address.city_id</code>.
      */
-    public Address setCityId(Integer cityId) {
+    public Address setCityId(Long cityId) {
         this.cityId = cityId;
         return this;
     }

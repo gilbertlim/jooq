@@ -16,7 +16,7 @@ public class Country implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer countryId;
+    private Long countryId;
     private String country;
     private LocalDateTime lastUpdate;
 
@@ -29,7 +29,7 @@ public class Country implements Serializable {
     }
 
     public Country(
-        Integer countryId,
+        Long countryId,
         String country,
         LocalDateTime lastUpdate
     ) {
@@ -41,14 +41,14 @@ public class Country implements Serializable {
     /**
      * Getter for <code>sakila.country.country_id</code>.
      */
-    public Integer getCountryId() {
+    public Long getCountryId() {
         return this.countryId;
     }
 
     /**
      * Setter for <code>sakila.country.country_id</code>.
      */
-    public Country setCountryId(Integer countryId) {
+    public Country setCountryId(Long countryId) {
         this.countryId = countryId;
         return this;
     }

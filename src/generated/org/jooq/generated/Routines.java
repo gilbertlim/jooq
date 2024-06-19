@@ -9,12 +9,14 @@ import java.time.LocalDateTime;
 
 import org.jooq.Configuration;
 import org.jooq.Field;
-import org.jooq.generated.routines.JFilmInStock;
-import org.jooq.generated.routines.JFilmNotInStock;
-import org.jooq.generated.routines.JGetCustomerBalance;
-import org.jooq.generated.routines.JInventoryHeldByCustomer;
-import org.jooq.generated.routines.JInventoryInStock;
-import org.jooq.generated.routines.JRewardsReport;
+import org.jooq.generated.routines.FilmInStock_;
+import org.jooq.generated.routines.FilmNotInStock_;
+import org.jooq.generated.routines.GetCustomerBalance_;
+import org.jooq.generated.routines.InventoryHeldByCustomer_;
+import org.jooq.generated.routines.InventoryInStock_;
+import org.jooq.generated.routines.RewardsReport_;
+import org.jooq.impl.AutoConverter;
+import org.jooq.types.UByte;
 
 
 /**
@@ -31,7 +33,7 @@ public class Routines {
         , Integer pFilmId
         , Integer pStoreId
     ) {
-        JFilmInStock p = new JFilmInStock();
+        FilmInStock_ p = new FilmInStock_();
         p.setPFilmId(pFilmId);
         p.setPStoreId(pStoreId);
 
@@ -47,7 +49,7 @@ public class Routines {
         , Integer pFilmId
         , Integer pStoreId
     ) {
-        JFilmNotInStock p = new JFilmNotInStock();
+        FilmNotInStock_ p = new FilmNotInStock_();
         p.setPFilmId(pFilmId);
         p.setPStoreId(pStoreId);
 
@@ -63,7 +65,7 @@ public class Routines {
         , Integer pCustomerId
         , LocalDateTime pEffectiveDate
     ) {
-        JGetCustomerBalance f = new JGetCustomerBalance();
+        GetCustomerBalance_ f = new GetCustomerBalance_();
         f.setPCustomerId(pCustomerId);
         f.setPEffectiveDate(pEffectiveDate);
 
@@ -78,7 +80,7 @@ public class Routines {
           Integer pCustomerId
         , LocalDateTime pEffectiveDate
     ) {
-        JGetCustomerBalance f = new JGetCustomerBalance();
+        GetCustomerBalance_ f = new GetCustomerBalance_();
         f.setPCustomerId(pCustomerId);
         f.setPEffectiveDate(pEffectiveDate);
 
@@ -92,7 +94,7 @@ public class Routines {
           Field<Integer> pCustomerId
         , Field<LocalDateTime> pEffectiveDate
     ) {
-        JGetCustomerBalance f = new JGetCustomerBalance();
+        GetCustomerBalance_ f = new GetCustomerBalance_();
         f.setPCustomerId(pCustomerId);
         f.setPEffectiveDate(pEffectiveDate);
 
@@ -106,7 +108,7 @@ public class Routines {
           Configuration configuration
         , Integer pInventoryId
     ) {
-        JInventoryHeldByCustomer f = new JInventoryHeldByCustomer();
+        InventoryHeldByCustomer_ f = new InventoryHeldByCustomer_();
         f.setPInventoryId(pInventoryId);
 
         f.execute(configuration);
@@ -119,7 +121,7 @@ public class Routines {
     public static Field<Integer> inventoryHeldByCustomer(
           Integer pInventoryId
     ) {
-        JInventoryHeldByCustomer f = new JInventoryHeldByCustomer();
+        InventoryHeldByCustomer_ f = new InventoryHeldByCustomer_();
         f.setPInventoryId(pInventoryId);
 
         return f.asField();
@@ -131,7 +133,7 @@ public class Routines {
     public static Field<Integer> inventoryHeldByCustomer(
           Field<Integer> pInventoryId
     ) {
-        JInventoryHeldByCustomer f = new JInventoryHeldByCustomer();
+        InventoryHeldByCustomer_ f = new InventoryHeldByCustomer_();
         f.setPInventoryId(pInventoryId);
 
         return f.asField();
@@ -144,7 +146,7 @@ public class Routines {
           Configuration configuration
         , Integer pInventoryId
     ) {
-        JInventoryInStock f = new JInventoryInStock();
+        InventoryInStock_ f = new InventoryInStock_();
         f.setPInventoryId(pInventoryId);
 
         f.execute(configuration);
@@ -157,7 +159,7 @@ public class Routines {
     public static Field<Byte> inventoryInStock(
           Integer pInventoryId
     ) {
-        JInventoryInStock f = new JInventoryInStock();
+        InventoryInStock_ f = new InventoryInStock_();
         f.setPInventoryId(pInventoryId);
 
         return f.asField();
@@ -169,7 +171,7 @@ public class Routines {
     public static Field<Byte> inventoryInStock(
           Field<Integer> pInventoryId
     ) {
-        JInventoryInStock f = new JInventoryInStock();
+        InventoryInStock_ f = new InventoryInStock_();
         f.setPInventoryId(pInventoryId);
 
         return f.asField();
@@ -180,10 +182,10 @@ public class Routines {
      */
     public static Integer rewardsReport(
           Configuration configuration
-        , Byte minMonthlyPurchases
+        , Integer minMonthlyPurchases
         , BigDecimal minDollarAmountPurchased
     ) {
-        JRewardsReport p = new JRewardsReport();
+        RewardsReport_ p = new RewardsReport_();
         p.setMinMonthlyPurchases(minMonthlyPurchases);
         p.setMinDollarAmountPurchased(minDollarAmountPurchased);
 

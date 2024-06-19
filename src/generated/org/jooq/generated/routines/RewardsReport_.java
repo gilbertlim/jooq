@@ -7,24 +7,26 @@ package org.jooq.generated.routines;
 import java.math.BigDecimal;
 
 import org.jooq.Parameter;
-import org.jooq.generated.JSakila;
+import org.jooq.generated.Sakila_;
 import org.jooq.impl.AbstractRoutine;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.Internal;
 import org.jooq.impl.SQLDataType;
+import org.jooq.types.UByte;
 
 
 /**
  * Provides a customizable report on best customers
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class JRewardsReport extends AbstractRoutine<java.lang.Void> {
+public class RewardsReport_ extends AbstractRoutine<java.lang.Void> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * The parameter <code>sakila.rewards_report.min_monthly_purchases</code>.
      */
-    public static final Parameter<Byte> MIN_MONTHLY_PURCHASES = Internal.createParameter("min_monthly_purchases", SQLDataType.TINYINT, false, false);
+    public static final Parameter<Integer> MIN_MONTHLY_PURCHASES = Internal.createParameter("min_monthly_purchases", SQLDataType.TINYINTUNSIGNED, false, false, new AutoConverter<UByte, Integer>(UByte.class, Integer.class));
 
     /**
      * The parameter
@@ -40,8 +42,8 @@ public class JRewardsReport extends AbstractRoutine<java.lang.Void> {
     /**
      * Create a new routine call instance
      */
-    public JRewardsReport() {
-        super("rewards_report", JSakila.SAKILA);
+    public RewardsReport_() {
+        super("rewards_report", Sakila_.SAKILA);
 
         addInParameter(MIN_MONTHLY_PURCHASES);
         addInParameter(MIN_DOLLAR_AMOUNT_PURCHASED);
@@ -52,7 +54,7 @@ public class JRewardsReport extends AbstractRoutine<java.lang.Void> {
      * Set the <code>min_monthly_purchases</code> parameter IN value to the
      * routine
      */
-    public void setMinMonthlyPurchases(Byte value) {
+    public void setMinMonthlyPurchases(Integer value) {
         setValue(MIN_MONTHLY_PURCHASES, value);
     }
 

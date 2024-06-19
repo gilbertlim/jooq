@@ -17,13 +17,13 @@ public class Staff implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer staffId;
+    private Long staffId;
     private String firstName;
     private String lastName;
-    private Integer addressId;
+    private Long addressId;
     private byte[] picture;
     private String email;
-    private Integer storeId;
+    private Long storeId;
     private Byte active;
     private String username;
     private String password;
@@ -46,13 +46,13 @@ public class Staff implements Serializable {
     }
 
     public Staff(
-        Integer staffId,
+        Long staffId,
         String firstName,
         String lastName,
-        Integer addressId,
+        Long addressId,
         byte[] picture,
         String email,
-        Integer storeId,
+        Long storeId,
         Byte active,
         String username,
         String password,
@@ -74,14 +74,14 @@ public class Staff implements Serializable {
     /**
      * Getter for <code>sakila.staff.staff_id</code>.
      */
-    public Integer getStaffId() {
+    public Long getStaffId() {
         return this.staffId;
     }
 
     /**
      * Setter for <code>sakila.staff.staff_id</code>.
      */
-    public Staff setStaffId(Integer staffId) {
+    public Staff setStaffId(Long staffId) {
         this.staffId = staffId;
         return this;
     }
@@ -119,14 +119,14 @@ public class Staff implements Serializable {
     /**
      * Getter for <code>sakila.staff.address_id</code>.
      */
-    public Integer getAddressId() {
+    public Long getAddressId() {
         return this.addressId;
     }
 
     /**
      * Setter for <code>sakila.staff.address_id</code>.
      */
-    public Staff setAddressId(Integer addressId) {
+    public Staff setAddressId(Long addressId) {
         this.addressId = addressId;
         return this;
     }
@@ -164,14 +164,14 @@ public class Staff implements Serializable {
     /**
      * Getter for <code>sakila.staff.store_id</code>.
      */
-    public Integer getStoreId() {
+    public Long getStoreId() {
         return this.storeId;
     }
 
     /**
      * Setter for <code>sakila.staff.store_id</code>.
      */
-    public Staff setStoreId(Integer storeId) {
+    public Staff setStoreId(Long storeId) {
         this.storeId = storeId;
         return this;
     }

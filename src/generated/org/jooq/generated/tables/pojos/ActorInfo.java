@@ -15,7 +15,7 @@ public class ActorInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer actorId;
+    private Long actorId;
     private String firstName;
     private String lastName;
     private String filmInfo;
@@ -30,7 +30,7 @@ public class ActorInfo implements Serializable {
     }
 
     public ActorInfo(
-        Integer actorId,
+        Long actorId,
         String firstName,
         String lastName,
         String filmInfo
@@ -44,14 +44,14 @@ public class ActorInfo implements Serializable {
     /**
      * Getter for <code>sakila.actor_info.actor_id</code>.
      */
-    public Integer getActorId() {
+    public Long getActorId() {
         return this.actorId;
     }
 
     /**
      * Setter for <code>sakila.actor_info.actor_id</code>.
      */
-    public ActorInfo setActorId(Integer actorId) {
+    public ActorInfo setActorId(Long actorId) {
         this.actorId = actorId;
         return this;
     }

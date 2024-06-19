@@ -15,14 +15,14 @@ public class StaffList implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
+    private Long id;
     private String name;
     private String address;
     private String zipCode;
     private String phone;
     private String city;
     private String country;
-    private Integer sid;
+    private Long sid;
 
     public StaffList() {}
 
@@ -38,14 +38,14 @@ public class StaffList implements Serializable {
     }
 
     public StaffList(
-        Integer id,
+        Long id,
         String name,
         String address,
         String zipCode,
         String phone,
         String city,
         String country,
-        Integer sid
+        Long sid
     ) {
         this.id = id;
         this.name = name;
@@ -60,14 +60,14 @@ public class StaffList implements Serializable {
     /**
      * Getter for <code>sakila.staff_list.ID</code>.
      */
-    public Integer getId() {
+    public Long getId() {
         return this.id;
     }
 
     /**
      * Setter for <code>sakila.staff_list.ID</code>.
      */
-    public StaffList setId(Integer id) {
+    public StaffList setId(Long id) {
         this.id = id;
         return this;
     }
@@ -165,14 +165,14 @@ public class StaffList implements Serializable {
     /**
      * Getter for <code>sakila.staff_list.SID</code>.
      */
-    public Integer getSid() {
+    public Long getSid() {
         return this.sid;
     }
 
     /**
      * Setter for <code>sakila.staff_list.SID</code>.
      */
-    public StaffList setSid(Integer sid) {
+    public StaffList setSid(Long sid) {
         this.sid = sid;
         return this;
     }

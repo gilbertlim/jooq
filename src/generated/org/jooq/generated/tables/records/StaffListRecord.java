@@ -4,7 +4,7 @@
 package org.jooq.generated.tables.records;
 
 
-import org.jooq.generated.tables.JStaffList;
+import org.jooq.generated.tables.StaffList_;
 import org.jooq.generated.tables.pojos.StaffList;
 import org.jooq.impl.TableRecordImpl;
 
@@ -20,7 +20,7 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Setter for <code>sakila.staff_list.ID</code>.
      */
-    public StaffListRecord setId(Integer value) {
+    public StaffListRecord setId(Long value) {
         set(0, value);
         return this;
     }
@@ -28,8 +28,8 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Getter for <code>sakila.staff_list.ID</code>.
      */
-    public Integer getId() {
-        return (Integer) get(0);
+    public Long getId() {
+        return (Long) get(0);
     }
 
     /**
@@ -125,7 +125,7 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Setter for <code>sakila.staff_list.SID</code>.
      */
-    public StaffListRecord setSid(Integer value) {
+    public StaffListRecord setSid(Long value) {
         set(7, value);
         return this;
     }
@@ -133,8 +133,8 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
     /**
      * Getter for <code>sakila.staff_list.SID</code>.
      */
-    public Integer getSid() {
-        return (Integer) get(7);
+    public Long getSid() {
+        return (Long) get(7);
     }
 
     // -------------------------------------------------------------------------
@@ -145,14 +145,14 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
      * Create a detached StaffListRecord
      */
     public StaffListRecord() {
-        super(JStaffList.STAFF_LIST);
+        super(StaffList_.STAFF_LIST);
     }
 
     /**
      * Create a detached, initialised StaffListRecord
      */
-    public StaffListRecord(Integer id, String name, String address, String zipCode, String phone, String city, String country, Integer sid) {
-        super(JStaffList.STAFF_LIST);
+    public StaffListRecord(Long id, String name, String address, String zipCode, String phone, String city, String country, Long sid) {
+        super(StaffList_.STAFF_LIST);
 
         setId(id);
         setName(name);
@@ -169,7 +169,7 @@ public class StaffListRecord extends TableRecordImpl<StaffListRecord> {
      * Create a detached, initialised StaffListRecord
      */
     public StaffListRecord(StaffList value) {
-        super(JStaffList.STAFF_LIST);
+        super(StaffList_.STAFF_LIST);
 
         if (value != null) {
             setId(value.getId());

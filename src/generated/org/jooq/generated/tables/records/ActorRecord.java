@@ -7,7 +7,7 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.JActor;
+import org.jooq.generated.tables.Actor_;
 import org.jooq.generated.tables.pojos.Actor;
 import org.jooq.impl.UpdatableRecordImpl;
 
@@ -23,7 +23,7 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     /**
      * Setter for <code>sakila.actor.actor_id</code>.
      */
-    public ActorRecord setActorId(Integer value) {
+    public ActorRecord setActorId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     /**
      * Getter for <code>sakila.actor.actor_id</code>.
      */
-    public Integer getActorId() {
-        return (Integer) get(0);
+    public Long getActorId() {
+        return (Long) get(0);
     }
 
     /**
@@ -85,7 +85,7 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<Integer> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -97,14 +97,14 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
      * Create a detached ActorRecord
      */
     public ActorRecord() {
-        super(JActor.ACTOR);
+        super(Actor_.ACTOR);
     }
 
     /**
      * Create a detached, initialised ActorRecord
      */
-    public ActorRecord(Integer actorId, String firstName, String lastName, LocalDateTime lastUpdate) {
-        super(JActor.ACTOR);
+    public ActorRecord(Long actorId, String firstName, String lastName, LocalDateTime lastUpdate) {
+        super(Actor_.ACTOR);
 
         setActorId(actorId);
         setFirstName(firstName);
@@ -117,7 +117,7 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
      * Create a detached, initialised ActorRecord
      */
     public ActorRecord(Actor value) {
-        super(JActor.ACTOR);
+        super(Actor_.ACTOR);
 
         if (value != null) {
             setActorId(value.getActorId());

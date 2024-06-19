@@ -6,7 +6,7 @@ package org.jooq.generated.tables.records;
 
 import java.math.BigDecimal;
 
-import org.jooq.generated.tables.JSalesByStore;
+import org.jooq.generated.tables.SalesByStore_;
 import org.jooq.generated.tables.pojos.SalesByStore;
 import org.jooq.impl.TableRecordImpl;
 
@@ -72,14 +72,14 @@ public class SalesByStoreRecord extends TableRecordImpl<SalesByStoreRecord> {
      * Create a detached SalesByStoreRecord
      */
     public SalesByStoreRecord() {
-        super(JSalesByStore.SALES_BY_STORE);
+        super(SalesByStore_.SALES_BY_STORE);
     }
 
     /**
      * Create a detached, initialised SalesByStoreRecord
      */
     public SalesByStoreRecord(String store, String manager, BigDecimal totalSales) {
-        super(JSalesByStore.SALES_BY_STORE);
+        super(SalesByStore_.SALES_BY_STORE);
 
         setStore(store);
         setManager(manager);
@@ -91,7 +91,7 @@ public class SalesByStoreRecord extends TableRecordImpl<SalesByStoreRecord> {
      * Create a detached, initialised SalesByStoreRecord
      */
     public SalesByStoreRecord(SalesByStore value) {
-        super(JSalesByStore.SALES_BY_STORE);
+        super(SalesByStore_.SALES_BY_STORE);
 
         if (value != null) {
             setStore(value.getStore());

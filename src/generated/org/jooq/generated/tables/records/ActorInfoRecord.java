@@ -4,7 +4,7 @@
 package org.jooq.generated.tables.records;
 
 
-import org.jooq.generated.tables.JActorInfo;
+import org.jooq.generated.tables.ActorInfo_;
 import org.jooq.generated.tables.pojos.ActorInfo;
 import org.jooq.impl.TableRecordImpl;
 
@@ -20,7 +20,7 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
     /**
      * Setter for <code>sakila.actor_info.actor_id</code>.
      */
-    public ActorInfoRecord setActorId(Integer value) {
+    public ActorInfoRecord setActorId(Long value) {
         set(0, value);
         return this;
     }
@@ -28,8 +28,8 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
     /**
      * Getter for <code>sakila.actor_info.actor_id</code>.
      */
-    public Integer getActorId() {
-        return (Integer) get(0);
+    public Long getActorId() {
+        return (Long) get(0);
     }
 
     /**
@@ -85,14 +85,14 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
      * Create a detached ActorInfoRecord
      */
     public ActorInfoRecord() {
-        super(JActorInfo.ACTOR_INFO);
+        super(ActorInfo_.ACTOR_INFO);
     }
 
     /**
      * Create a detached, initialised ActorInfoRecord
      */
-    public ActorInfoRecord(Integer actorId, String firstName, String lastName, String filmInfo) {
-        super(JActorInfo.ACTOR_INFO);
+    public ActorInfoRecord(Long actorId, String firstName, String lastName, String filmInfo) {
+        super(ActorInfo_.ACTOR_INFO);
 
         setActorId(actorId);
         setFirstName(firstName);
@@ -105,7 +105,7 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
      * Create a detached, initialised ActorInfoRecord
      */
     public ActorInfoRecord(ActorInfo value) {
-        super(JActorInfo.ACTOR_INFO);
+        super(ActorInfo_.ACTOR_INFO);
 
         if (value != null) {
             setActorId(value.getActorId());

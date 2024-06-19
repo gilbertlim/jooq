@@ -9,8 +9,8 @@ public class JPrefixGeneratorStrategy extends DefaultGeneratorStrategy {
     public String getJavaClassName(Definition definition, Mode mode) {
         String className = super.getJavaClassName(definition, mode);
         if (mode == Mode.DEFAULT) {
-            //return className + "_";
-            return "J" + className;
+            return className + "_";
+            //return "J" + className;
         }
         return className;
     }

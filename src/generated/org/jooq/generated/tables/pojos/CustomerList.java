@@ -15,7 +15,7 @@ public class CustomerList implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
+    private Long id;
     private String name;
     private String address;
     private String zipCode;
@@ -23,7 +23,7 @@ public class CustomerList implements Serializable {
     private String city;
     private String country;
     private String notes;
-    private Integer sid;
+    private Long sid;
 
     public CustomerList() {}
 
@@ -40,7 +40,7 @@ public class CustomerList implements Serializable {
     }
 
     public CustomerList(
-        Integer id,
+        Long id,
         String name,
         String address,
         String zipCode,
@@ -48,7 +48,7 @@ public class CustomerList implements Serializable {
         String city,
         String country,
         String notes,
-        Integer sid
+        Long sid
     ) {
         this.id = id;
         this.name = name;
@@ -64,14 +64,14 @@ public class CustomerList implements Serializable {
     /**
      * Getter for <code>sakila.customer_list.ID</code>.
      */
-    public Integer getId() {
+    public Long getId() {
         return this.id;
     }
 
     /**
      * Setter for <code>sakila.customer_list.ID</code>.
      */
-    public CustomerList setId(Integer id) {
+    public CustomerList setId(Long id) {
         this.id = id;
         return this;
     }
@@ -184,14 +184,14 @@ public class CustomerList implements Serializable {
     /**
      * Getter for <code>sakila.customer_list.SID</code>.
      */
-    public Integer getSid() {
+    public Long getSid() {
         return this.sid;
     }
 
     /**
      * Setter for <code>sakila.customer_list.SID</code>.
      */
-    public CustomerList setSid(Integer sid) {
+    public CustomerList setSid(Long sid) {
         this.sid = sid;
         return this;
     }

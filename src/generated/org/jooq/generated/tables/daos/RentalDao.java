@@ -9,10 +9,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.jooq.Configuration;
-import org.jooq.generated.tables.JRental;
+import org.jooq.generated.tables.Rental_;
 import org.jooq.generated.tables.pojos.Rental;
 import org.jooq.generated.tables.records.RentalRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DAOImpl;
+import org.jooq.types.UInteger;
 
 
 /**
@@ -25,14 +27,14 @@ public class RentalDao extends DAOImpl<RentalRecord, Rental, Integer> {
      * Create a new RentalDao without any configuration
      */
     public RentalDao() {
-        super(JRental.RENTAL, Rental.class);
+        super(Rental_.RENTAL, Rental.class);
     }
 
     /**
      * Create a new RentalDao with an attached configuration
      */
     public RentalDao(Configuration configuration) {
-        super(JRental.RENTAL, Rental.class, configuration);
+        super(Rental_.RENTAL, Rental.class, configuration);
     }
 
     @Override
@@ -44,118 +46,118 @@ public class RentalDao extends DAOImpl<RentalRecord, Rental, Integer> {
      * Fetch records that have <code>rental_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfJRentalId(Integer lowerInclusive, Integer upperInclusive) {
-        return fetchRange(JRental.RENTAL.RENTAL_ID, lowerInclusive, upperInclusive);
+    public List<Rental> fetchRangeOfRentalId_(Integer lowerInclusive, Integer upperInclusive) {
+        return fetchRange(Rental_.RENTAL.RENTAL_ID, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>rental_id IN (values)</code>
      */
-    public List<Rental> fetchByJRentalId(Integer... values) {
-        return fetch(JRental.RENTAL.RENTAL_ID, values);
+    public List<Rental> fetchByRentalId_(Integer... values) {
+        return fetch(Rental_.RENTAL.RENTAL_ID, values);
     }
 
     /**
      * Fetch a unique record that has <code>rental_id = value</code>
      */
-    public Rental fetchOneByJRentalId(Integer value) {
-        return fetchOne(JRental.RENTAL.RENTAL_ID, value);
+    public Rental fetchOneByRentalId_(Integer value) {
+        return fetchOne(Rental_.RENTAL.RENTAL_ID, value);
     }
 
     /**
      * Fetch a unique record that has <code>rental_id = value</code>
      */
-    public Optional<Rental> fetchOptionalByJRentalId(Integer value) {
-        return fetchOptional(JRental.RENTAL.RENTAL_ID, value);
+    public Optional<Rental> fetchOptionalByRentalId_(Integer value) {
+        return fetchOptional(Rental_.RENTAL.RENTAL_ID, value);
     }
 
     /**
      * Fetch records that have <code>rental_date BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfJRentalDate(LocalDateTime lowerInclusive, LocalDateTime upperInclusive) {
-        return fetchRange(JRental.RENTAL.RENTAL_DATE, lowerInclusive, upperInclusive);
+    public List<Rental> fetchRangeOfRentalDate_(LocalDateTime lowerInclusive, LocalDateTime upperInclusive) {
+        return fetchRange(Rental_.RENTAL.RENTAL_DATE, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>rental_date IN (values)</code>
      */
-    public List<Rental> fetchByJRentalDate(LocalDateTime... values) {
-        return fetch(JRental.RENTAL.RENTAL_DATE, values);
+    public List<Rental> fetchByRentalDate_(LocalDateTime... values) {
+        return fetch(Rental_.RENTAL.RENTAL_DATE, values);
     }
 
     /**
      * Fetch records that have <code>inventory_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfJInventoryId(Integer lowerInclusive, Integer upperInclusive) {
-        return fetchRange(JRental.RENTAL.INVENTORY_ID, lowerInclusive, upperInclusive);
+    public List<Rental> fetchRangeOfInventoryId_(Long lowerInclusive, Long upperInclusive) {
+        return fetchRange(Rental_.RENTAL.INVENTORY_ID, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>inventory_id IN (values)</code>
      */
-    public List<Rental> fetchByJInventoryId(Integer... values) {
-        return fetch(JRental.RENTAL.INVENTORY_ID, values);
+    public List<Rental> fetchByInventoryId_(Long... values) {
+        return fetch(Rental_.RENTAL.INVENTORY_ID, values);
     }
 
     /**
      * Fetch records that have <code>customer_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfJCustomerId(Integer lowerInclusive, Integer upperInclusive) {
-        return fetchRange(JRental.RENTAL.CUSTOMER_ID, lowerInclusive, upperInclusive);
+    public List<Rental> fetchRangeOfCustomerId_(Long lowerInclusive, Long upperInclusive) {
+        return fetchRange(Rental_.RENTAL.CUSTOMER_ID, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>customer_id IN (values)</code>
      */
-    public List<Rental> fetchByJCustomerId(Integer... values) {
-        return fetch(JRental.RENTAL.CUSTOMER_ID, values);
+    public List<Rental> fetchByCustomerId_(Long... values) {
+        return fetch(Rental_.RENTAL.CUSTOMER_ID, values);
     }
 
     /**
      * Fetch records that have <code>return_date BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfJReturnDate(LocalDateTime lowerInclusive, LocalDateTime upperInclusive) {
-        return fetchRange(JRental.RENTAL.RETURN_DATE, lowerInclusive, upperInclusive);
+    public List<Rental> fetchRangeOfReturnDate_(LocalDateTime lowerInclusive, LocalDateTime upperInclusive) {
+        return fetchRange(Rental_.RENTAL.RETURN_DATE, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>return_date IN (values)</code>
      */
-    public List<Rental> fetchByJReturnDate(LocalDateTime... values) {
-        return fetch(JRental.RENTAL.RETURN_DATE, values);
+    public List<Rental> fetchByReturnDate_(LocalDateTime... values) {
+        return fetch(Rental_.RENTAL.RETURN_DATE, values);
     }
 
     /**
      * Fetch records that have <code>staff_id BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfJStaffId(Integer lowerInclusive, Integer upperInclusive) {
-        return fetchRange(JRental.RENTAL.STAFF_ID, lowerInclusive, upperInclusive);
+    public List<Rental> fetchRangeOfStaffId_(Long lowerInclusive, Long upperInclusive) {
+        return fetchRange(Rental_.RENTAL.STAFF_ID, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>staff_id IN (values)</code>
      */
-    public List<Rental> fetchByJStaffId(Integer... values) {
-        return fetch(JRental.RENTAL.STAFF_ID, values);
+    public List<Rental> fetchByStaffId_(Long... values) {
+        return fetch(Rental_.RENTAL.STAFF_ID, values);
     }
 
     /**
      * Fetch records that have <code>last_update BETWEEN lowerInclusive AND
      * upperInclusive</code>
      */
-    public List<Rental> fetchRangeOfJLastUpdate(LocalDateTime lowerInclusive, LocalDateTime upperInclusive) {
-        return fetchRange(JRental.RENTAL.LAST_UPDATE, lowerInclusive, upperInclusive);
+    public List<Rental> fetchRangeOfLastUpdate_(LocalDateTime lowerInclusive, LocalDateTime upperInclusive) {
+        return fetchRange(Rental_.RENTAL.LAST_UPDATE, lowerInclusive, upperInclusive);
     }
 
     /**
      * Fetch records that have <code>last_update IN (values)</code>
      */
-    public List<Rental> fetchByJLastUpdate(LocalDateTime... values) {
-        return fetch(JRental.RENTAL.LAST_UPDATE, values);
+    public List<Rental> fetchByLastUpdate_(LocalDateTime... values) {
+        return fetch(Rental_.RENTAL.LAST_UPDATE, values);
     }
 }

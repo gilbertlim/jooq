@@ -19,7 +19,7 @@ import org.jooq.Stringly;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.TableOptions;
-import org.jooq.generated.JSakila;
+import org.jooq.generated.Sakila_;
 import org.jooq.generated.tables.records.SalesByStoreRecord;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
@@ -30,14 +30,14 @@ import org.jooq.impl.TableImpl;
  * VIEW
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
+public class SalesByStore_ extends TableImpl<SalesByStoreRecord> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>sakila.sales_by_store</code>
      */
-    public static final JSalesByStore SALES_BY_STORE = new JSalesByStore();
+    public static final SalesByStore_ SALES_BY_STORE = new SalesByStore_();
 
     /**
      * The class holding records for this type
@@ -62,92 +62,92 @@ public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
      */
     public final TableField<SalesByStoreRecord, BigDecimal> TOTAL_SALES = createField(DSL.name("total_sales"), SQLDataType.DECIMAL(27, 2), this, "");
 
-    private JSalesByStore(Name alias, Table<SalesByStoreRecord> aliased) {
+    private SalesByStore_(Name alias, Table<SalesByStoreRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }
 
-    private JSalesByStore(Name alias, Table<SalesByStoreRecord> aliased, Field<?>[] parameters, Condition where) {
+    private SalesByStore_(Name alias, Table<SalesByStoreRecord> aliased, Field<?>[] parameters, Condition where) {
         super(alias, null, aliased, parameters, DSL.comment("VIEW"), TableOptions.view("create view `sales_by_store` as select concat(`c`.`city`,',',`cy`.`country`) AS `store`,concat(`m`.`first_name`,' ',`m`.`last_name`) AS `manager`,sum(`p`.`amount`) AS `total_sales` from (((((((`sakila`.`payment` `p` join `sakila`.`rental` `r` on((`p`.`rental_id` = `r`.`rental_id`))) join `sakila`.`inventory` `i` on((`r`.`inventory_id` = `i`.`inventory_id`))) join `sakila`.`store` `s` on((`i`.`store_id` = `s`.`store_id`))) join `sakila`.`address` `a` on((`s`.`address_id` = `a`.`address_id`))) join `sakila`.`city` `c` on((`a`.`city_id` = `c`.`city_id`))) join `sakila`.`country` `cy` on((`c`.`country_id` = `cy`.`country_id`))) join `sakila`.`staff` `m` on((`s`.`manager_staff_id` = `m`.`staff_id`))) group by `s`.`store_id` order by `cy`.`country`,`c`.`city`"), where);
     }
 
     /**
      * Create an aliased <code>sakila.sales_by_store</code> table reference
      */
-    public JSalesByStore(String alias) {
+    public SalesByStore_(String alias) {
         this(DSL.name(alias), SALES_BY_STORE);
     }
 
     /**
      * Create an aliased <code>sakila.sales_by_store</code> table reference
      */
-    public JSalesByStore(Name alias) {
+    public SalesByStore_(Name alias) {
         this(alias, SALES_BY_STORE);
     }
 
     /**
      * Create a <code>sakila.sales_by_store</code> table reference
      */
-    public JSalesByStore() {
+    public SalesByStore_() {
         this(DSL.name("sales_by_store"), null);
     }
 
     @Override
     public Schema getSchema() {
-        return aliased() ? null : JSakila.SAKILA;
+        return aliased() ? null : Sakila_.SAKILA;
     }
 
     @Override
-    public JSalesByStore as(String alias) {
-        return new JSalesByStore(DSL.name(alias), this);
+    public SalesByStore_ as(String alias) {
+        return new SalesByStore_(DSL.name(alias), this);
     }
 
     @Override
-    public JSalesByStore as(Name alias) {
-        return new JSalesByStore(alias, this);
+    public SalesByStore_ as(Name alias) {
+        return new SalesByStore_(alias, this);
     }
 
     @Override
-    public JSalesByStore as(Table<?> alias) {
-        return new JSalesByStore(alias.getQualifiedName(), this);
-    }
-
-    /**
-     * Rename this table
-     */
-    @Override
-    public JSalesByStore rename(String name) {
-        return new JSalesByStore(DSL.name(name), null);
+    public SalesByStore_ as(Table<?> alias) {
+        return new SalesByStore_(alias.getQualifiedName(), this);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public JSalesByStore rename(Name name) {
-        return new JSalesByStore(name, null);
+    public SalesByStore_ rename(String name) {
+        return new SalesByStore_(DSL.name(name), null);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public JSalesByStore rename(Table<?> name) {
-        return new JSalesByStore(name.getQualifiedName(), null);
+    public SalesByStore_ rename(Name name) {
+        return new SalesByStore_(name, null);
+    }
+
+    /**
+     * Rename this table
+     */
+    @Override
+    public SalesByStore_ rename(Table<?> name) {
+        return new SalesByStore_(name.getQualifiedName(), null);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public JSalesByStore where(Condition condition) {
-        return new JSalesByStore(getQualifiedName(), aliased() ? this : null, null, condition);
+    public SalesByStore_ where(Condition condition) {
+        return new SalesByStore_(getQualifiedName(), aliased() ? this : null, null, condition);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public JSalesByStore where(Collection<? extends Condition> conditions) {
+    public SalesByStore_ where(Collection<? extends Condition> conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -155,7 +155,7 @@ public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public JSalesByStore where(Condition... conditions) {
+    public SalesByStore_ where(Condition... conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -163,7 +163,7 @@ public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public JSalesByStore where(Field<Boolean> condition) {
+    public SalesByStore_ where(Field<Boolean> condition) {
         return where(DSL.condition(condition));
     }
 
@@ -172,7 +172,7 @@ public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
      */
     @Override
     @PlainSQL
-    public JSalesByStore where(SQL condition) {
+    public SalesByStore_ where(SQL condition) {
         return where(DSL.condition(condition));
     }
 
@@ -181,7 +181,7 @@ public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
      */
     @Override
     @PlainSQL
-    public JSalesByStore where(@Stringly.SQL String condition) {
+    public SalesByStore_ where(@Stringly.SQL String condition) {
         return where(DSL.condition(condition));
     }
 
@@ -190,7 +190,7 @@ public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
      */
     @Override
     @PlainSQL
-    public JSalesByStore where(@Stringly.SQL String condition, Object... binds) {
+    public SalesByStore_ where(@Stringly.SQL String condition, Object... binds) {
         return where(DSL.condition(condition, binds));
     }
 
@@ -199,7 +199,7 @@ public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
      */
     @Override
     @PlainSQL
-    public JSalesByStore where(@Stringly.SQL String condition, QueryPart... parts) {
+    public SalesByStore_ where(@Stringly.SQL String condition, QueryPart... parts) {
         return where(DSL.condition(condition, parts));
     }
 
@@ -207,7 +207,7 @@ public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public JSalesByStore whereExists(Select<?> select) {
+    public SalesByStore_ whereExists(Select<?> select) {
         return where(DSL.exists(select));
     }
 
@@ -215,7 +215,7 @@ public class JSalesByStore extends TableImpl<SalesByStoreRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public JSalesByStore whereNotExists(Select<?> select) {
+    public SalesByStore_ whereNotExists(Select<?> select) {
         return where(DSL.notExists(select));
     }
 }

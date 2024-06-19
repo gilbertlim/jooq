@@ -5,7 +5,7 @@ package org.jooq.generated.tables.records;
 
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.JFilmText;
+import org.jooq.generated.tables.FilmText_;
 import org.jooq.generated.tables.pojos.FilmText;
 import org.jooq.impl.UpdatableRecordImpl;
 
@@ -80,14 +80,14 @@ public class FilmTextRecord extends UpdatableRecordImpl<FilmTextRecord> {
      * Create a detached FilmTextRecord
      */
     public FilmTextRecord() {
-        super(JFilmText.FILM_TEXT);
+        super(FilmText_.FILM_TEXT);
     }
 
     /**
      * Create a detached, initialised FilmTextRecord
      */
     public FilmTextRecord(Integer filmId, String title, String description) {
-        super(JFilmText.FILM_TEXT);
+        super(FilmText_.FILM_TEXT);
 
         setFilmId(filmId);
         setTitle(title);
@@ -99,7 +99,7 @@ public class FilmTextRecord extends UpdatableRecordImpl<FilmTextRecord> {
      * Create a detached, initialised FilmTextRecord
      */
     public FilmTextRecord(FilmText value) {
-        super(JFilmText.FILM_TEXT);
+        super(FilmText_.FILM_TEXT);
 
         if (value != null) {
             setFilmId(value.getFilmId());

@@ -7,7 +7,7 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.JCountry;
+import org.jooq.generated.tables.Country_;
 import org.jooq.generated.tables.pojos.Country;
 import org.jooq.impl.UpdatableRecordImpl;
 
@@ -23,7 +23,7 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     /**
      * Setter for <code>sakila.country.country_id</code>.
      */
-    public CountryRecord setCountryId(Integer value) {
+    public CountryRecord setCountryId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     /**
      * Getter for <code>sakila.country.country_id</code>.
      */
-    public Integer getCountryId() {
-        return (Integer) get(0);
+    public Long getCountryId() {
+        return (Long) get(0);
     }
 
     /**
@@ -70,7 +70,7 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<Integer> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -82,14 +82,14 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
      * Create a detached CountryRecord
      */
     public CountryRecord() {
-        super(JCountry.COUNTRY);
+        super(Country_.COUNTRY);
     }
 
     /**
      * Create a detached, initialised CountryRecord
      */
-    public CountryRecord(Integer countryId, String country, LocalDateTime lastUpdate) {
-        super(JCountry.COUNTRY);
+    public CountryRecord(Long countryId, String country, LocalDateTime lastUpdate) {
+        super(Country_.COUNTRY);
 
         setCountryId(countryId);
         setCountry(country);
@@ -101,7 +101,7 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
      * Create a detached, initialised CountryRecord
      */
     public CountryRecord(Country value) {
-        super(JCountry.COUNTRY);
+        super(Country_.COUNTRY);
 
         if (value != null) {
             setCountryId(value.getCountryId());

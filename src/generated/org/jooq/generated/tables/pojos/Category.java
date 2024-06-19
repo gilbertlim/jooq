@@ -16,7 +16,7 @@ public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer categoryId;
+    private Long categoryId;
     private String name;
     private LocalDateTime lastUpdate;
 
@@ -29,7 +29,7 @@ public class Category implements Serializable {
     }
 
     public Category(
-        Integer categoryId,
+        Long categoryId,
         String name,
         LocalDateTime lastUpdate
     ) {
@@ -41,14 +41,14 @@ public class Category implements Serializable {
     /**
      * Getter for <code>sakila.category.category_id</code>.
      */
-    public Integer getCategoryId() {
+    public Long getCategoryId() {
         return this.categoryId;
     }
 
     /**
      * Setter for <code>sakila.category.category_id</code>.
      */
-    public Category setCategoryId(Integer categoryId) {
+    public Category setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
         return this;
     }

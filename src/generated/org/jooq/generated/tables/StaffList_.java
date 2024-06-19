@@ -18,25 +18,27 @@ import org.jooq.Stringly;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.TableOptions;
-import org.jooq.generated.JSakila;
+import org.jooq.generated.Sakila_;
 import org.jooq.generated.tables.records.StaffListRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
+import org.jooq.types.UInteger;
 
 
 /**
  * VIEW
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class JStaffList extends TableImpl<StaffListRecord> {
+public class StaffList_ extends TableImpl<StaffListRecord> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>sakila.staff_list</code>
      */
-    public static final JStaffList STAFF_LIST = new JStaffList();
+    public static final StaffList_ STAFF_LIST = new StaffList_();
 
     /**
      * The class holding records for this type
@@ -49,7 +51,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
     /**
      * The column <code>sakila.staff_list.ID</code>.
      */
-    public final TableField<StaffListRecord, Integer> ID = createField(DSL.name("ID"), SQLDataType.INTEGER.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "");
+    public final TableField<StaffListRecord, Long> ID = createField(DSL.name("ID"), SQLDataType.INTEGERUNSIGNED.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.staff_list.name</code>.
@@ -84,94 +86,94 @@ public class JStaffList extends TableImpl<StaffListRecord> {
     /**
      * The column <code>sakila.staff_list.SID</code>.
      */
-    public final TableField<StaffListRecord, Integer> SID = createField(DSL.name("SID"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<StaffListRecord, Long> SID = createField(DSL.name("SID"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
-    private JStaffList(Name alias, Table<StaffListRecord> aliased) {
+    private StaffList_(Name alias, Table<StaffListRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }
 
-    private JStaffList(Name alias, Table<StaffListRecord> aliased, Field<?>[] parameters, Condition where) {
+    private StaffList_(Name alias, Table<StaffListRecord> aliased, Field<?>[] parameters, Condition where) {
         super(alias, null, aliased, parameters, DSL.comment("VIEW"), TableOptions.view("create view `staff_list` as select `s`.`staff_id` AS `ID`,concat(`s`.`first_name`,' ',`s`.`last_name`) AS `name`,`a`.`address` AS `address`,`a`.`postal_code` AS `zip code`,`a`.`phone` AS `phone`,`sakila`.`city`.`city` AS `city`,`sakila`.`country`.`country` AS `country`,`s`.`store_id` AS `SID` from (((`sakila`.`staff` `s` join `sakila`.`address` `a` on((`s`.`address_id` = `a`.`address_id`))) join `sakila`.`city` on((`a`.`city_id` = `sakila`.`city`.`city_id`))) join `sakila`.`country` on((`sakila`.`city`.`country_id` = `sakila`.`country`.`country_id`)))"), where);
     }
 
     /**
      * Create an aliased <code>sakila.staff_list</code> table reference
      */
-    public JStaffList(String alias) {
+    public StaffList_(String alias) {
         this(DSL.name(alias), STAFF_LIST);
     }
 
     /**
      * Create an aliased <code>sakila.staff_list</code> table reference
      */
-    public JStaffList(Name alias) {
+    public StaffList_(Name alias) {
         this(alias, STAFF_LIST);
     }
 
     /**
      * Create a <code>sakila.staff_list</code> table reference
      */
-    public JStaffList() {
+    public StaffList_() {
         this(DSL.name("staff_list"), null);
     }
 
     @Override
     public Schema getSchema() {
-        return aliased() ? null : JSakila.SAKILA;
+        return aliased() ? null : Sakila_.SAKILA;
     }
 
     @Override
-    public JStaffList as(String alias) {
-        return new JStaffList(DSL.name(alias), this);
+    public StaffList_ as(String alias) {
+        return new StaffList_(DSL.name(alias), this);
     }
 
     @Override
-    public JStaffList as(Name alias) {
-        return new JStaffList(alias, this);
+    public StaffList_ as(Name alias) {
+        return new StaffList_(alias, this);
     }
 
     @Override
-    public JStaffList as(Table<?> alias) {
-        return new JStaffList(alias.getQualifiedName(), this);
-    }
-
-    /**
-     * Rename this table
-     */
-    @Override
-    public JStaffList rename(String name) {
-        return new JStaffList(DSL.name(name), null);
+    public StaffList_ as(Table<?> alias) {
+        return new StaffList_(alias.getQualifiedName(), this);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public JStaffList rename(Name name) {
-        return new JStaffList(name, null);
+    public StaffList_ rename(String name) {
+        return new StaffList_(DSL.name(name), null);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public JStaffList rename(Table<?> name) {
-        return new JStaffList(name.getQualifiedName(), null);
+    public StaffList_ rename(Name name) {
+        return new StaffList_(name, null);
+    }
+
+    /**
+     * Rename this table
+     */
+    @Override
+    public StaffList_ rename(Table<?> name) {
+        return new StaffList_(name.getQualifiedName(), null);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public JStaffList where(Condition condition) {
-        return new JStaffList(getQualifiedName(), aliased() ? this : null, null, condition);
+    public StaffList_ where(Condition condition) {
+        return new StaffList_(getQualifiedName(), aliased() ? this : null, null, condition);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public JStaffList where(Collection<? extends Condition> conditions) {
+    public StaffList_ where(Collection<? extends Condition> conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -179,7 +181,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public JStaffList where(Condition... conditions) {
+    public StaffList_ where(Condition... conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -187,7 +189,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public JStaffList where(Field<Boolean> condition) {
+    public StaffList_ where(Field<Boolean> condition) {
         return where(DSL.condition(condition));
     }
 
@@ -196,7 +198,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
      */
     @Override
     @PlainSQL
-    public JStaffList where(SQL condition) {
+    public StaffList_ where(SQL condition) {
         return where(DSL.condition(condition));
     }
 
@@ -205,7 +207,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
      */
     @Override
     @PlainSQL
-    public JStaffList where(@Stringly.SQL String condition) {
+    public StaffList_ where(@Stringly.SQL String condition) {
         return where(DSL.condition(condition));
     }
 
@@ -214,7 +216,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
      */
     @Override
     @PlainSQL
-    public JStaffList where(@Stringly.SQL String condition, Object... binds) {
+    public StaffList_ where(@Stringly.SQL String condition, Object... binds) {
         return where(DSL.condition(condition, binds));
     }
 
@@ -223,7 +225,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
      */
     @Override
     @PlainSQL
-    public JStaffList where(@Stringly.SQL String condition, QueryPart... parts) {
+    public StaffList_ where(@Stringly.SQL String condition, QueryPart... parts) {
         return where(DSL.condition(condition, parts));
     }
 
@@ -231,7 +233,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public JStaffList whereExists(Select<?> select) {
+    public StaffList_ whereExists(Select<?> select) {
         return where(DSL.exists(select));
     }
 
@@ -239,7 +241,7 @@ public class JStaffList extends TableImpl<StaffListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public JStaffList whereNotExists(Select<?> select) {
+    public StaffList_ whereNotExists(Select<?> select) {
         return where(DSL.notExists(select));
     }
 }

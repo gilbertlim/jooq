@@ -16,9 +16,9 @@ public class Inventory implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer inventoryId;
-    private Integer filmId;
-    private Integer storeId;
+    private Long inventoryId;
+    private Long filmId;
+    private Long storeId;
     private LocalDateTime lastUpdate;
 
     public Inventory() {}
@@ -31,9 +31,9 @@ public class Inventory implements Serializable {
     }
 
     public Inventory(
-        Integer inventoryId,
-        Integer filmId,
-        Integer storeId,
+        Long inventoryId,
+        Long filmId,
+        Long storeId,
         LocalDateTime lastUpdate
     ) {
         this.inventoryId = inventoryId;
@@ -45,14 +45,14 @@ public class Inventory implements Serializable {
     /**
      * Getter for <code>sakila.inventory.inventory_id</code>.
      */
-    public Integer getInventoryId() {
+    public Long getInventoryId() {
         return this.inventoryId;
     }
 
     /**
      * Setter for <code>sakila.inventory.inventory_id</code>.
      */
-    public Inventory setInventoryId(Integer inventoryId) {
+    public Inventory setInventoryId(Long inventoryId) {
         this.inventoryId = inventoryId;
         return this;
     }
@@ -60,14 +60,14 @@ public class Inventory implements Serializable {
     /**
      * Getter for <code>sakila.inventory.film_id</code>.
      */
-    public Integer getFilmId() {
+    public Long getFilmId() {
         return this.filmId;
     }
 
     /**
      * Setter for <code>sakila.inventory.film_id</code>.
      */
-    public Inventory setFilmId(Integer filmId) {
+    public Inventory setFilmId(Long filmId) {
         this.filmId = filmId;
         return this;
     }
@@ -75,14 +75,14 @@ public class Inventory implements Serializable {
     /**
      * Getter for <code>sakila.inventory.store_id</code>.
      */
-    public Integer getStoreId() {
+    public Long getStoreId() {
         return this.storeId;
     }
 
     /**
      * Setter for <code>sakila.inventory.store_id</code>.
      */
-    public Inventory setStoreId(Integer storeId) {
+    public Inventory setStoreId(Long storeId) {
         this.storeId = storeId;
         return this;
     }

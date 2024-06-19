@@ -4,7 +4,7 @@
 package org.jooq.generated.tables.records;
 
 
-import org.jooq.generated.tables.JCustomerList;
+import org.jooq.generated.tables.CustomerList_;
 import org.jooq.generated.tables.pojos.CustomerList;
 import org.jooq.impl.TableRecordImpl;
 
@@ -20,7 +20,7 @@ public class CustomerListRecord extends TableRecordImpl<CustomerListRecord> {
     /**
      * Setter for <code>sakila.customer_list.ID</code>.
      */
-    public CustomerListRecord setId(Integer value) {
+    public CustomerListRecord setId(Long value) {
         set(0, value);
         return this;
     }
@@ -28,8 +28,8 @@ public class CustomerListRecord extends TableRecordImpl<CustomerListRecord> {
     /**
      * Getter for <code>sakila.customer_list.ID</code>.
      */
-    public Integer getId() {
-        return (Integer) get(0);
+    public Long getId() {
+        return (Long) get(0);
     }
 
     /**
@@ -140,7 +140,7 @@ public class CustomerListRecord extends TableRecordImpl<CustomerListRecord> {
     /**
      * Setter for <code>sakila.customer_list.SID</code>.
      */
-    public CustomerListRecord setSid(Integer value) {
+    public CustomerListRecord setSid(Long value) {
         set(8, value);
         return this;
     }
@@ -148,8 +148,8 @@ public class CustomerListRecord extends TableRecordImpl<CustomerListRecord> {
     /**
      * Getter for <code>sakila.customer_list.SID</code>.
      */
-    public Integer getSid() {
-        return (Integer) get(8);
+    public Long getSid() {
+        return (Long) get(8);
     }
 
     // -------------------------------------------------------------------------
@@ -160,14 +160,14 @@ public class CustomerListRecord extends TableRecordImpl<CustomerListRecord> {
      * Create a detached CustomerListRecord
      */
     public CustomerListRecord() {
-        super(JCustomerList.CUSTOMER_LIST);
+        super(CustomerList_.CUSTOMER_LIST);
     }
 
     /**
      * Create a detached, initialised CustomerListRecord
      */
-    public CustomerListRecord(Integer id, String name, String address, String zipCode, String phone, String city, String country, String notes, Integer sid) {
-        super(JCustomerList.CUSTOMER_LIST);
+    public CustomerListRecord(Long id, String name, String address, String zipCode, String phone, String city, String country, String notes, Long sid) {
+        super(CustomerList_.CUSTOMER_LIST);
 
         setId(id);
         setName(name);
@@ -185,7 +185,7 @@ public class CustomerListRecord extends TableRecordImpl<CustomerListRecord> {
      * Create a detached, initialised CustomerListRecord
      */
     public CustomerListRecord(CustomerList value) {
-        super(JCustomerList.CUSTOMER_LIST);
+        super(CustomerList_.CUSTOMER_LIST);
 
         if (value != null) {
             setId(value.getId());

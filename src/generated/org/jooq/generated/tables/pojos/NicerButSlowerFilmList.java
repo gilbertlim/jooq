@@ -18,12 +18,12 @@ public class NicerButSlowerFilmList implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer fid;
+    private Long fid;
     private String title;
     private String description;
     private String category;
     private BigDecimal price;
-    private Short length;
+    private Integer length;
     private NicerButSlowerFilmListRating rating;
     private String actors;
 
@@ -41,12 +41,12 @@ public class NicerButSlowerFilmList implements Serializable {
     }
 
     public NicerButSlowerFilmList(
-        Integer fid,
+        Long fid,
         String title,
         String description,
         String category,
         BigDecimal price,
-        Short length,
+        Integer length,
         NicerButSlowerFilmListRating rating,
         String actors
     ) {
@@ -63,14 +63,14 @@ public class NicerButSlowerFilmList implements Serializable {
     /**
      * Getter for <code>sakila.nicer_but_slower_film_list.FID</code>.
      */
-    public Integer getFid() {
+    public Long getFid() {
         return this.fid;
     }
 
     /**
      * Setter for <code>sakila.nicer_but_slower_film_list.FID</code>.
      */
-    public NicerButSlowerFilmList setFid(Integer fid) {
+    public NicerButSlowerFilmList setFid(Long fid) {
         this.fid = fid;
         return this;
     }
@@ -138,14 +138,14 @@ public class NicerButSlowerFilmList implements Serializable {
     /**
      * Getter for <code>sakila.nicer_but_slower_film_list.length</code>.
      */
-    public Short getLength() {
+    public Integer getLength() {
         return this.length;
     }
 
     /**
      * Setter for <code>sakila.nicer_but_slower_film_list.length</code>.
      */
-    public NicerButSlowerFilmList setLength(Short length) {
+    public NicerButSlowerFilmList setLength(Integer length) {
         this.length = length;
         return this;
     }

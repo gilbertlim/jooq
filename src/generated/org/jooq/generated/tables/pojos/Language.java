@@ -16,7 +16,7 @@ public class Language implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer languageId;
+    private Long languageId;
     private String name;
     private LocalDateTime lastUpdate;
 
@@ -29,7 +29,7 @@ public class Language implements Serializable {
     }
 
     public Language(
-        Integer languageId,
+        Long languageId,
         String name,
         LocalDateTime lastUpdate
     ) {
@@ -41,14 +41,14 @@ public class Language implements Serializable {
     /**
      * Getter for <code>sakila.language.language_id</code>.
      */
-    public Integer getLanguageId() {
+    public Long getLanguageId() {
         return this.languageId;
     }
 
     /**
      * Setter for <code>sakila.language.language_id</code>.
      */
-    public Language setLanguageId(Integer languageId) {
+    public Language setLanguageId(Long languageId) {
         this.languageId = languageId;
         return this;
     }

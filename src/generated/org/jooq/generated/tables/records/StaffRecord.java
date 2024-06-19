@@ -7,7 +7,7 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.JStaff;
+import org.jooq.generated.tables.Staff_;
 import org.jooq.generated.tables.pojos.Staff;
 import org.jooq.impl.UpdatableRecordImpl;
 
@@ -23,7 +23,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Setter for <code>sakila.staff.staff_id</code>.
      */
-    public StaffRecord setStaffId(Integer value) {
+    public StaffRecord setStaffId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Getter for <code>sakila.staff.staff_id</code>.
      */
-    public Integer getStaffId() {
-        return (Integer) get(0);
+    public Long getStaffId() {
+        return (Long) get(0);
     }
 
     /**
@@ -68,7 +68,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Setter for <code>sakila.staff.address_id</code>.
      */
-    public StaffRecord setAddressId(Integer value) {
+    public StaffRecord setAddressId(Long value) {
         set(3, value);
         return this;
     }
@@ -76,8 +76,8 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Getter for <code>sakila.staff.address_id</code>.
      */
-    public Integer getAddressId() {
-        return (Integer) get(3);
+    public Long getAddressId() {
+        return (Long) get(3);
     }
 
     /**
@@ -113,7 +113,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Setter for <code>sakila.staff.store_id</code>.
      */
-    public StaffRecord setStoreId(Integer value) {
+    public StaffRecord setStoreId(Long value) {
         set(6, value);
         return this;
     }
@@ -121,8 +121,8 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     /**
      * Getter for <code>sakila.staff.store_id</code>.
      */
-    public Integer getStoreId() {
-        return (Integer) get(6);
+    public Long getStoreId() {
+        return (Long) get(6);
     }
 
     /**
@@ -190,7 +190,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<Integer> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -202,14 +202,14 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
      * Create a detached StaffRecord
      */
     public StaffRecord() {
-        super(JStaff.STAFF);
+        super(Staff_.STAFF);
     }
 
     /**
      * Create a detached, initialised StaffRecord
      */
-    public StaffRecord(Integer staffId, String firstName, String lastName, Integer addressId, byte[] picture, String email, Integer storeId, Byte active, String username, String password, LocalDateTime lastUpdate) {
-        super(JStaff.STAFF);
+    public StaffRecord(Long staffId, String firstName, String lastName, Long addressId, byte[] picture, String email, Long storeId, Byte active, String username, String password, LocalDateTime lastUpdate) {
+        super(Staff_.STAFF);
 
         setStaffId(staffId);
         setFirstName(firstName);
@@ -229,7 +229,7 @@ public class StaffRecord extends UpdatableRecordImpl<StaffRecord> {
      * Create a detached, initialised StaffRecord
      */
     public StaffRecord(Staff value) {
-        super(JStaff.STAFF);
+        super(Staff_.STAFF);
 
         if (value != null) {
             setStaffId(value.getStaffId());
