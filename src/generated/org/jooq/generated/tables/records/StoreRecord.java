@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Store;
+import org.jooq.generated.tables.JStore;
+import org.jooq.generated.tables.pojos.Store;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Setter for <code>sakila.store.store_id</code>.
      */
-    public StoreRecord setStoreId(UInteger value) {
+    public StoreRecord setStoreId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,14 +31,14 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Getter for <code>sakila.store.store_id</code>.
      */
-    public UInteger getStoreId() {
-        return (UInteger) get(0);
+    public Integer getStoreId() {
+        return (Integer) get(0);
     }
 
     /**
      * Setter for <code>sakila.store.manager_staff_id</code>.
      */
-    public StoreRecord setManagerStaffId(UInteger value) {
+    public StoreRecord setManagerStaffId(Integer value) {
         set(1, value);
         return this;
     }
@@ -46,14 +46,14 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Getter for <code>sakila.store.manager_staff_id</code>.
      */
-    public UInteger getManagerStaffId() {
-        return (UInteger) get(1);
+    public Integer getManagerStaffId() {
+        return (Integer) get(1);
     }
 
     /**
      * Setter for <code>sakila.store.address_id</code>.
      */
-    public StoreRecord setAddressId(UInteger value) {
+    public StoreRecord setAddressId(Integer value) {
         set(2, value);
         return this;
     }
@@ -61,8 +61,8 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Getter for <code>sakila.store.address_id</code>.
      */
-    public UInteger getAddressId() {
-        return (UInteger) get(2);
+    public Integer getAddressId() {
+        return (Integer) get(2);
     }
 
     /**
@@ -85,7 +85,7 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -97,14 +97,14 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
      * Create a detached StoreRecord
      */
     public StoreRecord() {
-        super(Store.STORE);
+        super(JStore.STORE);
     }
 
     /**
      * Create a detached, initialised StoreRecord
      */
-    public StoreRecord(UInteger storeId, UInteger managerStaffId, UInteger addressId, LocalDateTime lastUpdate) {
-        super(Store.STORE);
+    public StoreRecord(Integer storeId, Integer managerStaffId, Integer addressId, LocalDateTime lastUpdate) {
+        super(JStore.STORE);
 
         setStoreId(storeId);
         setManagerStaffId(managerStaffId);
@@ -116,8 +116,8 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Create a detached, initialised StoreRecord
      */
-    public StoreRecord(org.jooq.generated.tables.pojos.Store value) {
-        super(Store.STORE);
+    public StoreRecord(Store value) {
+        super(JStore.STORE);
 
         if (value != null) {
             setStoreId(value.getStoreId());

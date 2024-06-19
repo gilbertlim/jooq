@@ -8,8 +8,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 import org.jooq.generated.enums.FilmListRating;
-import org.jooq.types.UInteger;
-import org.jooq.types.UShort;
 
 
 /**
@@ -20,12 +18,12 @@ public class FilmList implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private UInteger fid;
+    private Integer fid;
     private String title;
     private String description;
     private String category;
     private BigDecimal price;
-    private UShort length;
+    private Short length;
     private FilmListRating rating;
     private String actors;
 
@@ -43,12 +41,12 @@ public class FilmList implements Serializable {
     }
 
     public FilmList(
-        UInteger fid,
+        Integer fid,
         String title,
         String description,
         String category,
         BigDecimal price,
-        UShort length,
+        Short length,
         FilmListRating rating,
         String actors
     ) {
@@ -65,14 +63,14 @@ public class FilmList implements Serializable {
     /**
      * Getter for <code>sakila.film_list.FID</code>.
      */
-    public UInteger getFid() {
+    public Integer getFid() {
         return this.fid;
     }
 
     /**
      * Setter for <code>sakila.film_list.FID</code>.
      */
-    public FilmList setFid(UInteger fid) {
+    public FilmList setFid(Integer fid) {
         this.fid = fid;
         return this;
     }
@@ -140,14 +138,14 @@ public class FilmList implements Serializable {
     /**
      * Getter for <code>sakila.film_list.length</code>.
      */
-    public UShort getLength() {
+    public Short getLength() {
         return this.length;
     }
 
     /**
      * Setter for <code>sakila.film_list.length</code>.
      */
-    public FilmList setLength(UShort length) {
+    public FilmList setLength(Short length) {
         this.length = length;
         return this;
     }

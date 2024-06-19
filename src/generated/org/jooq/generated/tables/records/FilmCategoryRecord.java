@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record2;
-import org.jooq.generated.tables.FilmCategory;
+import org.jooq.generated.tables.JFilmCategory;
+import org.jooq.generated.tables.pojos.FilmCategory;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     /**
      * Setter for <code>sakila.film_category.film_id</code>.
      */
-    public FilmCategoryRecord setFilmId(UInteger value) {
+    public FilmCategoryRecord setFilmId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,14 +31,14 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     /**
      * Getter for <code>sakila.film_category.film_id</code>.
      */
-    public UInteger getFilmId() {
-        return (UInteger) get(0);
+    public Integer getFilmId() {
+        return (Integer) get(0);
     }
 
     /**
      * Setter for <code>sakila.film_category.category_id</code>.
      */
-    public FilmCategoryRecord setCategoryId(UInteger value) {
+    public FilmCategoryRecord setCategoryId(Integer value) {
         set(1, value);
         return this;
     }
@@ -46,8 +46,8 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     /**
      * Getter for <code>sakila.film_category.category_id</code>.
      */
-    public UInteger getCategoryId() {
-        return (UInteger) get(1);
+    public Integer getCategoryId() {
+        return (Integer) get(1);
     }
 
     /**
@@ -70,7 +70,7 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     // -------------------------------------------------------------------------
 
     @Override
-    public Record2<UInteger, UInteger> key() {
+    public Record2<Integer, Integer> key() {
         return (Record2) super.key();
     }
 
@@ -82,14 +82,14 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
      * Create a detached FilmCategoryRecord
      */
     public FilmCategoryRecord() {
-        super(FilmCategory.FILM_CATEGORY);
+        super(JFilmCategory.FILM_CATEGORY);
     }
 
     /**
      * Create a detached, initialised FilmCategoryRecord
      */
-    public FilmCategoryRecord(UInteger filmId, UInteger categoryId, LocalDateTime lastUpdate) {
-        super(FilmCategory.FILM_CATEGORY);
+    public FilmCategoryRecord(Integer filmId, Integer categoryId, LocalDateTime lastUpdate) {
+        super(JFilmCategory.FILM_CATEGORY);
 
         setFilmId(filmId);
         setCategoryId(categoryId);
@@ -100,8 +100,8 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     /**
      * Create a detached, initialised FilmCategoryRecord
      */
-    public FilmCategoryRecord(org.jooq.generated.tables.pojos.FilmCategory value) {
-        super(FilmCategory.FILM_CATEGORY);
+    public FilmCategoryRecord(FilmCategory value) {
+        super(JFilmCategory.FILM_CATEGORY);
 
         if (value != null) {
             setFilmId(value.getFilmId());

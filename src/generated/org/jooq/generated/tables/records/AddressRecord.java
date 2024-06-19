@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Address;
+import org.jooq.generated.tables.JAddress;
+import org.jooq.generated.tables.pojos.Address;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Setter for <code>sakila.address.address_id</code>.
      */
-    public AddressRecord setAddressId(UInteger value) {
+    public AddressRecord setAddressId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Getter for <code>sakila.address.address_id</code>.
      */
-    public UInteger getAddressId() {
-        return (UInteger) get(0);
+    public Integer getAddressId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -83,7 +83,7 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Setter for <code>sakila.address.city_id</code>.
      */
-    public AddressRecord setCityId(UInteger value) {
+    public AddressRecord setCityId(Integer value) {
         set(4, value);
         return this;
     }
@@ -91,8 +91,8 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Getter for <code>sakila.address.city_id</code>.
      */
-    public UInteger getCityId() {
-        return (UInteger) get(4);
+    public Integer getCityId() {
+        return (Integer) get(4);
     }
 
     /**
@@ -145,7 +145,7 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -157,14 +157,14 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
      * Create a detached AddressRecord
      */
     public AddressRecord() {
-        super(Address.ADDRESS);
+        super(JAddress.ADDRESS);
     }
 
     /**
      * Create a detached, initialised AddressRecord
      */
-    public AddressRecord(UInteger addressId, String address, String address2, String district, UInteger cityId, String postalCode, String phone, LocalDateTime lastUpdate) {
-        super(Address.ADDRESS);
+    public AddressRecord(Integer addressId, String address, String address2, String district, Integer cityId, String postalCode, String phone, LocalDateTime lastUpdate) {
+        super(JAddress.ADDRESS);
 
         setAddressId(addressId);
         setAddress(address);
@@ -180,8 +180,8 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Create a detached, initialised AddressRecord
      */
-    public AddressRecord(org.jooq.generated.tables.pojos.Address value) {
-        super(Address.ADDRESS);
+    public AddressRecord(Address value) {
+        super(JAddress.ADDRESS);
 
         if (value != null) {
             setAddressId(value.getAddressId());

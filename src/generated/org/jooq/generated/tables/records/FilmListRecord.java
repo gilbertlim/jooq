@@ -7,10 +7,9 @@ package org.jooq.generated.tables.records;
 import java.math.BigDecimal;
 
 import org.jooq.generated.enums.FilmListRating;
-import org.jooq.generated.tables.FilmList;
+import org.jooq.generated.tables.JFilmList;
+import org.jooq.generated.tables.pojos.FilmList;
 import org.jooq.impl.TableRecordImpl;
-import org.jooq.types.UInteger;
-import org.jooq.types.UShort;
 
 
 /**
@@ -24,7 +23,7 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Setter for <code>sakila.film_list.FID</code>.
      */
-    public FilmListRecord setFid(UInteger value) {
+    public FilmListRecord setFid(Integer value) {
         set(0, value);
         return this;
     }
@@ -32,8 +31,8 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Getter for <code>sakila.film_list.FID</code>.
      */
-    public UInteger getFid() {
-        return (UInteger) get(0);
+    public Integer getFid() {
+        return (Integer) get(0);
     }
 
     /**
@@ -99,7 +98,7 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Setter for <code>sakila.film_list.length</code>.
      */
-    public FilmListRecord setLength(UShort value) {
+    public FilmListRecord setLength(Short value) {
         set(5, value);
         return this;
     }
@@ -107,8 +106,8 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Getter for <code>sakila.film_list.length</code>.
      */
-    public UShort getLength() {
-        return (UShort) get(5);
+    public Short getLength() {
+        return (Short) get(5);
     }
 
     /**
@@ -149,14 +148,14 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
      * Create a detached FilmListRecord
      */
     public FilmListRecord() {
-        super(FilmList.FILM_LIST);
+        super(JFilmList.FILM_LIST);
     }
 
     /**
      * Create a detached, initialised FilmListRecord
      */
-    public FilmListRecord(UInteger fid, String title, String description, String category, BigDecimal price, UShort length, FilmListRating rating, String actors) {
-        super(FilmList.FILM_LIST);
+    public FilmListRecord(Integer fid, String title, String description, String category, BigDecimal price, Short length, FilmListRating rating, String actors) {
+        super(JFilmList.FILM_LIST);
 
         setFid(fid);
         setTitle(title);
@@ -172,8 +171,8 @@ public class FilmListRecord extends TableRecordImpl<FilmListRecord> {
     /**
      * Create a detached, initialised FilmListRecord
      */
-    public FilmListRecord(org.jooq.generated.tables.pojos.FilmList value) {
-        super(FilmList.FILM_LIST);
+    public FilmListRecord(FilmList value) {
+        super(JFilmList.FILM_LIST);
 
         if (value != null) {
             setFid(value.getFid());

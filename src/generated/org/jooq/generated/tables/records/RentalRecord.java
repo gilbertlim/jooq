@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Rental;
+import org.jooq.generated.tables.JRental;
+import org.jooq.generated.tables.pojos.Rental;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -53,7 +53,7 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Setter for <code>sakila.rental.inventory_id</code>.
      */
-    public RentalRecord setInventoryId(UInteger value) {
+    public RentalRecord setInventoryId(Integer value) {
         set(2, value);
         return this;
     }
@@ -61,14 +61,14 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Getter for <code>sakila.rental.inventory_id</code>.
      */
-    public UInteger getInventoryId() {
-        return (UInteger) get(2);
+    public Integer getInventoryId() {
+        return (Integer) get(2);
     }
 
     /**
      * Setter for <code>sakila.rental.customer_id</code>.
      */
-    public RentalRecord setCustomerId(UInteger value) {
+    public RentalRecord setCustomerId(Integer value) {
         set(3, value);
         return this;
     }
@@ -76,8 +76,8 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Getter for <code>sakila.rental.customer_id</code>.
      */
-    public UInteger getCustomerId() {
-        return (UInteger) get(3);
+    public Integer getCustomerId() {
+        return (Integer) get(3);
     }
 
     /**
@@ -98,7 +98,7 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Setter for <code>sakila.rental.staff_id</code>.
      */
-    public RentalRecord setStaffId(UInteger value) {
+    public RentalRecord setStaffId(Integer value) {
         set(5, value);
         return this;
     }
@@ -106,8 +106,8 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Getter for <code>sakila.rental.staff_id</code>.
      */
-    public UInteger getStaffId() {
-        return (UInteger) get(5);
+    public Integer getStaffId() {
+        return (Integer) get(5);
     }
 
     /**
@@ -142,14 +142,14 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
      * Create a detached RentalRecord
      */
     public RentalRecord() {
-        super(Rental.RENTAL);
+        super(JRental.RENTAL);
     }
 
     /**
      * Create a detached, initialised RentalRecord
      */
-    public RentalRecord(Integer rentalId, LocalDateTime rentalDate, UInteger inventoryId, UInteger customerId, LocalDateTime returnDate, UInteger staffId, LocalDateTime lastUpdate) {
-        super(Rental.RENTAL);
+    public RentalRecord(Integer rentalId, LocalDateTime rentalDate, Integer inventoryId, Integer customerId, LocalDateTime returnDate, Integer staffId, LocalDateTime lastUpdate) {
+        super(JRental.RENTAL);
 
         setRentalId(rentalId);
         setRentalDate(rentalDate);
@@ -164,8 +164,8 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Create a detached, initialised RentalRecord
      */
-    public RentalRecord(org.jooq.generated.tables.pojos.Rental value) {
-        super(Rental.RENTAL);
+    public RentalRecord(Rental value) {
+        super(JRental.RENTAL);
 
         if (value != null) {
             setRentalId(value.getRentalId());

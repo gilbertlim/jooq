@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Country;
+import org.jooq.generated.tables.JCountry;
+import org.jooq.generated.tables.pojos.Country;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     /**
      * Setter for <code>sakila.country.country_id</code>.
      */
-    public CountryRecord setCountryId(UInteger value) {
+    public CountryRecord setCountryId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     /**
      * Getter for <code>sakila.country.country_id</code>.
      */
-    public UInteger getCountryId() {
-        return (UInteger) get(0);
+    public Integer getCountryId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -70,7 +70,7 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -82,14 +82,14 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
      * Create a detached CountryRecord
      */
     public CountryRecord() {
-        super(Country.COUNTRY);
+        super(JCountry.COUNTRY);
     }
 
     /**
      * Create a detached, initialised CountryRecord
      */
-    public CountryRecord(UInteger countryId, String country, LocalDateTime lastUpdate) {
-        super(Country.COUNTRY);
+    public CountryRecord(Integer countryId, String country, LocalDateTime lastUpdate) {
+        super(JCountry.COUNTRY);
 
         setCountryId(countryId);
         setCountry(country);
@@ -100,8 +100,8 @@ public class CountryRecord extends UpdatableRecordImpl<CountryRecord> {
     /**
      * Create a detached, initialised CountryRecord
      */
-    public CountryRecord(org.jooq.generated.tables.pojos.Country value) {
-        super(Country.COUNTRY);
+    public CountryRecord(Country value) {
+        super(JCountry.COUNTRY);
 
         if (value != null) {
             setCountryId(value.getCountryId());

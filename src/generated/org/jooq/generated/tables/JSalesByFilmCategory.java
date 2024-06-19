@@ -19,7 +19,7 @@ import org.jooq.Stringly;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.TableOptions;
-import org.jooq.generated.Sakila;
+import org.jooq.generated.JSakila;
 import org.jooq.generated.tables.records.SalesByFilmCategoryRecord;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
@@ -30,14 +30,14 @@ import org.jooq.impl.TableImpl;
  * VIEW
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
+public class JSalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>sakila.sales_by_film_category</code>
      */
-    public static final SalesByFilmCategory SALES_BY_FILM_CATEGORY = new SalesByFilmCategory();
+    public static final JSalesByFilmCategory SALES_BY_FILM_CATEGORY = new JSalesByFilmCategory();
 
     /**
      * The class holding records for this type
@@ -57,11 +57,11 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      */
     public final TableField<SalesByFilmCategoryRecord, BigDecimal> TOTAL_SALES = createField(DSL.name("total_sales"), SQLDataType.DECIMAL(27, 2), this, "");
 
-    private SalesByFilmCategory(Name alias, Table<SalesByFilmCategoryRecord> aliased) {
+    private JSalesByFilmCategory(Name alias, Table<SalesByFilmCategoryRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }
 
-    private SalesByFilmCategory(Name alias, Table<SalesByFilmCategoryRecord> aliased, Field<?>[] parameters, Condition where) {
+    private JSalesByFilmCategory(Name alias, Table<SalesByFilmCategoryRecord> aliased, Field<?>[] parameters, Condition where) {
         super(alias, null, aliased, parameters, DSL.comment("VIEW"), TableOptions.view("create view `sales_by_film_category` as select `c`.`name` AS `category`,sum(`p`.`amount`) AS `total_sales` from (((((`sakila`.`payment` `p` join `sakila`.`rental` `r` on((`p`.`rental_id` = `r`.`rental_id`))) join `sakila`.`inventory` `i` on((`r`.`inventory_id` = `i`.`inventory_id`))) join `sakila`.`film` `f` on((`i`.`film_id` = `f`.`film_id`))) join `sakila`.`film_category` `fc` on((`f`.`film_id` = `fc`.`film_id`))) join `sakila`.`category` `c` on((`fc`.`category_id` = `c`.`category_id`))) group by `c`.`name` order by `total_sales` desc"), where);
     }
 
@@ -69,7 +69,7 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      * Create an aliased <code>sakila.sales_by_film_category</code> table
      * reference
      */
-    public SalesByFilmCategory(String alias) {
+    public JSalesByFilmCategory(String alias) {
         this(DSL.name(alias), SALES_BY_FILM_CATEGORY);
     }
 
@@ -77,74 +77,74 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      * Create an aliased <code>sakila.sales_by_film_category</code> table
      * reference
      */
-    public SalesByFilmCategory(Name alias) {
+    public JSalesByFilmCategory(Name alias) {
         this(alias, SALES_BY_FILM_CATEGORY);
     }
 
     /**
      * Create a <code>sakila.sales_by_film_category</code> table reference
      */
-    public SalesByFilmCategory() {
+    public JSalesByFilmCategory() {
         this(DSL.name("sales_by_film_category"), null);
     }
 
     @Override
     public Schema getSchema() {
-        return aliased() ? null : Sakila.SAKILA;
+        return aliased() ? null : JSakila.SAKILA;
     }
 
     @Override
-    public SalesByFilmCategory as(String alias) {
-        return new SalesByFilmCategory(DSL.name(alias), this);
+    public JSalesByFilmCategory as(String alias) {
+        return new JSalesByFilmCategory(DSL.name(alias), this);
     }
 
     @Override
-    public SalesByFilmCategory as(Name alias) {
-        return new SalesByFilmCategory(alias, this);
+    public JSalesByFilmCategory as(Name alias) {
+        return new JSalesByFilmCategory(alias, this);
     }
 
     @Override
-    public SalesByFilmCategory as(Table<?> alias) {
-        return new SalesByFilmCategory(alias.getQualifiedName(), this);
-    }
-
-    /**
-     * Rename this table
-     */
-    @Override
-    public SalesByFilmCategory rename(String name) {
-        return new SalesByFilmCategory(DSL.name(name), null);
+    public JSalesByFilmCategory as(Table<?> alias) {
+        return new JSalesByFilmCategory(alias.getQualifiedName(), this);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public SalesByFilmCategory rename(Name name) {
-        return new SalesByFilmCategory(name, null);
+    public JSalesByFilmCategory rename(String name) {
+        return new JSalesByFilmCategory(DSL.name(name), null);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public SalesByFilmCategory rename(Table<?> name) {
-        return new SalesByFilmCategory(name.getQualifiedName(), null);
+    public JSalesByFilmCategory rename(Name name) {
+        return new JSalesByFilmCategory(name, null);
+    }
+
+    /**
+     * Rename this table
+     */
+    @Override
+    public JSalesByFilmCategory rename(Table<?> name) {
+        return new JSalesByFilmCategory(name.getQualifiedName(), null);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public SalesByFilmCategory where(Condition condition) {
-        return new SalesByFilmCategory(getQualifiedName(), aliased() ? this : null, null, condition);
+    public JSalesByFilmCategory where(Condition condition) {
+        return new JSalesByFilmCategory(getQualifiedName(), aliased() ? this : null, null, condition);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public SalesByFilmCategory where(Collection<? extends Condition> conditions) {
+    public JSalesByFilmCategory where(Collection<? extends Condition> conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -152,7 +152,7 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public SalesByFilmCategory where(Condition... conditions) {
+    public JSalesByFilmCategory where(Condition... conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -160,7 +160,7 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public SalesByFilmCategory where(Field<Boolean> condition) {
+    public JSalesByFilmCategory where(Field<Boolean> condition) {
         return where(DSL.condition(condition));
     }
 
@@ -169,7 +169,7 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      */
     @Override
     @PlainSQL
-    public SalesByFilmCategory where(SQL condition) {
+    public JSalesByFilmCategory where(SQL condition) {
         return where(DSL.condition(condition));
     }
 
@@ -178,7 +178,7 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      */
     @Override
     @PlainSQL
-    public SalesByFilmCategory where(@Stringly.SQL String condition) {
+    public JSalesByFilmCategory where(@Stringly.SQL String condition) {
         return where(DSL.condition(condition));
     }
 
@@ -187,7 +187,7 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      */
     @Override
     @PlainSQL
-    public SalesByFilmCategory where(@Stringly.SQL String condition, Object... binds) {
+    public JSalesByFilmCategory where(@Stringly.SQL String condition, Object... binds) {
         return where(DSL.condition(condition, binds));
     }
 
@@ -196,7 +196,7 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      */
     @Override
     @PlainSQL
-    public SalesByFilmCategory where(@Stringly.SQL String condition, QueryPart... parts) {
+    public JSalesByFilmCategory where(@Stringly.SQL String condition, QueryPart... parts) {
         return where(DSL.condition(condition, parts));
     }
 
@@ -204,7 +204,7 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public SalesByFilmCategory whereExists(Select<?> select) {
+    public JSalesByFilmCategory whereExists(Select<?> select) {
         return where(DSL.exists(select));
     }
 
@@ -212,7 +212,7 @@ public class SalesByFilmCategory extends TableImpl<SalesByFilmCategoryRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public SalesByFilmCategory whereNotExists(Select<?> select) {
+    public JSalesByFilmCategory whereNotExists(Select<?> select) {
         return where(DSL.notExists(select));
     }
 }

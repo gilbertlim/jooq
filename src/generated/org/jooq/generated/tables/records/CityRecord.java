@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.City;
+import org.jooq.generated.tables.JCity;
+import org.jooq.generated.tables.pojos.City;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Setter for <code>sakila.city.city_id</code>.
      */
-    public CityRecord setCityId(UInteger value) {
+    public CityRecord setCityId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Getter for <code>sakila.city.city_id</code>.
      */
-    public UInteger getCityId() {
-        return (UInteger) get(0);
+    public Integer getCityId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -53,7 +53,7 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Setter for <code>sakila.city.country_id</code>.
      */
-    public CityRecord setCountryId(UInteger value) {
+    public CityRecord setCountryId(Integer value) {
         set(2, value);
         return this;
     }
@@ -61,8 +61,8 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Getter for <code>sakila.city.country_id</code>.
      */
-    public UInteger getCountryId() {
-        return (UInteger) get(2);
+    public Integer getCountryId() {
+        return (Integer) get(2);
     }
 
     /**
@@ -85,7 +85,7 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -97,14 +97,14 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
      * Create a detached CityRecord
      */
     public CityRecord() {
-        super(City.CITY);
+        super(JCity.CITY);
     }
 
     /**
      * Create a detached, initialised CityRecord
      */
-    public CityRecord(UInteger cityId, String city, UInteger countryId, LocalDateTime lastUpdate) {
-        super(City.CITY);
+    public CityRecord(Integer cityId, String city, Integer countryId, LocalDateTime lastUpdate) {
+        super(JCity.CITY);
 
         setCityId(cityId);
         setCity(city);
@@ -116,8 +116,8 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Create a detached, initialised CityRecord
      */
-    public CityRecord(org.jooq.generated.tables.pojos.City value) {
-        super(City.CITY);
+    public CityRecord(City value) {
+        super(JCity.CITY);
 
         if (value != null) {
             setCityId(value.getCityId());

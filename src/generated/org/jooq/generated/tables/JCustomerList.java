@@ -18,26 +18,25 @@ import org.jooq.Stringly;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.TableOptions;
-import org.jooq.generated.Sakila;
+import org.jooq.generated.JSakila;
 import org.jooq.generated.tables.records.CustomerListRecord;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
-import org.jooq.types.UInteger;
 
 
 /**
  * VIEW
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class CustomerList extends TableImpl<CustomerListRecord> {
+public class JCustomerList extends TableImpl<CustomerListRecord> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>sakila.customer_list</code>
      */
-    public static final CustomerList CUSTOMER_LIST = new CustomerList();
+    public static final JCustomerList CUSTOMER_LIST = new JCustomerList();
 
     /**
      * The class holding records for this type
@@ -50,7 +49,7 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
     /**
      * The column <code>sakila.customer_list.ID</code>.
      */
-    public final TableField<CustomerListRecord, UInteger> ID = createField(DSL.name("ID"), SQLDataType.INTEGERUNSIGNED.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "");
+    public final TableField<CustomerListRecord, Integer> ID = createField(DSL.name("ID"), SQLDataType.INTEGER.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "");
 
     /**
      * The column <code>sakila.customer_list.name</code>.
@@ -90,94 +89,94 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
     /**
      * The column <code>sakila.customer_list.SID</code>.
      */
-    public final TableField<CustomerListRecord, UInteger> SID = createField(DSL.name("SID"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "");
+    public final TableField<CustomerListRecord, Integer> SID = createField(DSL.name("SID"), SQLDataType.INTEGER.nullable(false), this, "");
 
-    private CustomerList(Name alias, Table<CustomerListRecord> aliased) {
+    private JCustomerList(Name alias, Table<CustomerListRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }
 
-    private CustomerList(Name alias, Table<CustomerListRecord> aliased, Field<?>[] parameters, Condition where) {
+    private JCustomerList(Name alias, Table<CustomerListRecord> aliased, Field<?>[] parameters, Condition where) {
         super(alias, null, aliased, parameters, DSL.comment("VIEW"), TableOptions.view("create view `customer_list` as select `cu`.`customer_id` AS `ID`,concat(`cu`.`first_name`,' ',`cu`.`last_name`) AS `name`,`a`.`address` AS `address`,`a`.`postal_code` AS `zip code`,`a`.`phone` AS `phone`,`sakila`.`city`.`city` AS `city`,`sakila`.`country`.`country` AS `country`,if(`cu`.`active`,'active','') AS `notes`,`cu`.`store_id` AS `SID` from (((`sakila`.`customer` `cu` join `sakila`.`address` `a` on((`cu`.`address_id` = `a`.`address_id`))) join `sakila`.`city` on((`a`.`city_id` = `sakila`.`city`.`city_id`))) join `sakila`.`country` on((`sakila`.`city`.`country_id` = `sakila`.`country`.`country_id`)))"), where);
     }
 
     /**
      * Create an aliased <code>sakila.customer_list</code> table reference
      */
-    public CustomerList(String alias) {
+    public JCustomerList(String alias) {
         this(DSL.name(alias), CUSTOMER_LIST);
     }
 
     /**
      * Create an aliased <code>sakila.customer_list</code> table reference
      */
-    public CustomerList(Name alias) {
+    public JCustomerList(Name alias) {
         this(alias, CUSTOMER_LIST);
     }
 
     /**
      * Create a <code>sakila.customer_list</code> table reference
      */
-    public CustomerList() {
+    public JCustomerList() {
         this(DSL.name("customer_list"), null);
     }
 
     @Override
     public Schema getSchema() {
-        return aliased() ? null : Sakila.SAKILA;
+        return aliased() ? null : JSakila.SAKILA;
     }
 
     @Override
-    public CustomerList as(String alias) {
-        return new CustomerList(DSL.name(alias), this);
+    public JCustomerList as(String alias) {
+        return new JCustomerList(DSL.name(alias), this);
     }
 
     @Override
-    public CustomerList as(Name alias) {
-        return new CustomerList(alias, this);
+    public JCustomerList as(Name alias) {
+        return new JCustomerList(alias, this);
     }
 
     @Override
-    public CustomerList as(Table<?> alias) {
-        return new CustomerList(alias.getQualifiedName(), this);
-    }
-
-    /**
-     * Rename this table
-     */
-    @Override
-    public CustomerList rename(String name) {
-        return new CustomerList(DSL.name(name), null);
+    public JCustomerList as(Table<?> alias) {
+        return new JCustomerList(alias.getQualifiedName(), this);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public CustomerList rename(Name name) {
-        return new CustomerList(name, null);
+    public JCustomerList rename(String name) {
+        return new JCustomerList(DSL.name(name), null);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public CustomerList rename(Table<?> name) {
-        return new CustomerList(name.getQualifiedName(), null);
+    public JCustomerList rename(Name name) {
+        return new JCustomerList(name, null);
+    }
+
+    /**
+     * Rename this table
+     */
+    @Override
+    public JCustomerList rename(Table<?> name) {
+        return new JCustomerList(name.getQualifiedName(), null);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public CustomerList where(Condition condition) {
-        return new CustomerList(getQualifiedName(), aliased() ? this : null, null, condition);
+    public JCustomerList where(Condition condition) {
+        return new JCustomerList(getQualifiedName(), aliased() ? this : null, null, condition);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public CustomerList where(Collection<? extends Condition> conditions) {
+    public JCustomerList where(Collection<? extends Condition> conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -185,7 +184,7 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public CustomerList where(Condition... conditions) {
+    public JCustomerList where(Condition... conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -193,7 +192,7 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public CustomerList where(Field<Boolean> condition) {
+    public JCustomerList where(Field<Boolean> condition) {
         return where(DSL.condition(condition));
     }
 
@@ -202,7 +201,7 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
      */
     @Override
     @PlainSQL
-    public CustomerList where(SQL condition) {
+    public JCustomerList where(SQL condition) {
         return where(DSL.condition(condition));
     }
 
@@ -211,7 +210,7 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
      */
     @Override
     @PlainSQL
-    public CustomerList where(@Stringly.SQL String condition) {
+    public JCustomerList where(@Stringly.SQL String condition) {
         return where(DSL.condition(condition));
     }
 
@@ -220,7 +219,7 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
      */
     @Override
     @PlainSQL
-    public CustomerList where(@Stringly.SQL String condition, Object... binds) {
+    public JCustomerList where(@Stringly.SQL String condition, Object... binds) {
         return where(DSL.condition(condition, binds));
     }
 
@@ -229,7 +228,7 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
      */
     @Override
     @PlainSQL
-    public CustomerList where(@Stringly.SQL String condition, QueryPart... parts) {
+    public JCustomerList where(@Stringly.SQL String condition, QueryPart... parts) {
         return where(DSL.condition(condition, parts));
     }
 
@@ -237,7 +236,7 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public CustomerList whereExists(Select<?> select) {
+    public JCustomerList whereExists(Select<?> select) {
         return where(DSL.exists(select));
     }
 
@@ -245,7 +244,7 @@ public class CustomerList extends TableImpl<CustomerListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public CustomerList whereNotExists(Select<?> select) {
+    public JCustomerList whereNotExists(Select<?> select) {
         return where(DSL.notExists(select));
     }
 }

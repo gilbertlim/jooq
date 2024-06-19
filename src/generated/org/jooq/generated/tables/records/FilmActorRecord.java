@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record2;
-import org.jooq.generated.tables.FilmActor;
+import org.jooq.generated.tables.JFilmActor;
+import org.jooq.generated.tables.pojos.FilmActor;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Setter for <code>sakila.film_actor.actor_id</code>.
      */
-    public FilmActorRecord setActorId(UInteger value) {
+    public FilmActorRecord setActorId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,14 +31,14 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Getter for <code>sakila.film_actor.actor_id</code>.
      */
-    public UInteger getActorId() {
-        return (UInteger) get(0);
+    public Integer getActorId() {
+        return (Integer) get(0);
     }
 
     /**
      * Setter for <code>sakila.film_actor.film_id</code>.
      */
-    public FilmActorRecord setFilmId(UInteger value) {
+    public FilmActorRecord setFilmId(Integer value) {
         set(1, value);
         return this;
     }
@@ -46,8 +46,8 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Getter for <code>sakila.film_actor.film_id</code>.
      */
-    public UInteger getFilmId() {
-        return (UInteger) get(1);
+    public Integer getFilmId() {
+        return (Integer) get(1);
     }
 
     /**
@@ -70,7 +70,7 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record2<UInteger, UInteger> key() {
+    public Record2<Integer, Integer> key() {
         return (Record2) super.key();
     }
 
@@ -82,14 +82,14 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
      * Create a detached FilmActorRecord
      */
     public FilmActorRecord() {
-        super(FilmActor.FILM_ACTOR);
+        super(JFilmActor.FILM_ACTOR);
     }
 
     /**
      * Create a detached, initialised FilmActorRecord
      */
-    public FilmActorRecord(UInteger actorId, UInteger filmId, LocalDateTime lastUpdate) {
-        super(FilmActor.FILM_ACTOR);
+    public FilmActorRecord(Integer actorId, Integer filmId, LocalDateTime lastUpdate) {
+        super(JFilmActor.FILM_ACTOR);
 
         setActorId(actorId);
         setFilmId(filmId);
@@ -100,8 +100,8 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Create a detached, initialised FilmActorRecord
      */
-    public FilmActorRecord(org.jooq.generated.tables.pojos.FilmActor value) {
-        super(FilmActor.FILM_ACTOR);
+    public FilmActorRecord(FilmActor value) {
+        super(JFilmActor.FILM_ACTOR);
 
         if (value != null) {
             setActorId(value.getActorId());

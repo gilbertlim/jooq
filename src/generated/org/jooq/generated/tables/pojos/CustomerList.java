@@ -6,8 +6,6 @@ package org.jooq.generated.tables.pojos;
 
 import java.io.Serializable;
 
-import org.jooq.types.UInteger;
-
 
 /**
  * VIEW
@@ -17,7 +15,7 @@ public class CustomerList implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private UInteger id;
+    private Integer id;
     private String name;
     private String address;
     private String zipCode;
@@ -25,7 +23,7 @@ public class CustomerList implements Serializable {
     private String city;
     private String country;
     private String notes;
-    private UInteger sid;
+    private Integer sid;
 
     public CustomerList() {}
 
@@ -42,7 +40,7 @@ public class CustomerList implements Serializable {
     }
 
     public CustomerList(
-        UInteger id,
+        Integer id,
         String name,
         String address,
         String zipCode,
@@ -50,7 +48,7 @@ public class CustomerList implements Serializable {
         String city,
         String country,
         String notes,
-        UInteger sid
+        Integer sid
     ) {
         this.id = id;
         this.name = name;
@@ -66,14 +64,14 @@ public class CustomerList implements Serializable {
     /**
      * Getter for <code>sakila.customer_list.ID</code>.
      */
-    public UInteger getId() {
+    public Integer getId() {
         return this.id;
     }
 
     /**
      * Setter for <code>sakila.customer_list.ID</code>.
      */
-    public CustomerList setId(UInteger id) {
+    public CustomerList setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -186,14 +184,14 @@ public class CustomerList implements Serializable {
     /**
      * Getter for <code>sakila.customer_list.SID</code>.
      */
-    public UInteger getSid() {
+    public Integer getSid() {
         return this.sid;
     }
 
     /**
      * Setter for <code>sakila.customer_list.SID</code>.
      */
-    public CustomerList setSid(UInteger sid) {
+    public CustomerList setSid(Integer sid) {
         this.sid = sid;
         return this;
     }

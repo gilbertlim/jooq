@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Inventory;
+import org.jooq.generated.tables.JInventory;
+import org.jooq.generated.tables.pojos.Inventory;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Setter for <code>sakila.inventory.inventory_id</code>.
      */
-    public InventoryRecord setInventoryId(UInteger value) {
+    public InventoryRecord setInventoryId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,14 +31,14 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Getter for <code>sakila.inventory.inventory_id</code>.
      */
-    public UInteger getInventoryId() {
-        return (UInteger) get(0);
+    public Integer getInventoryId() {
+        return (Integer) get(0);
     }
 
     /**
      * Setter for <code>sakila.inventory.film_id</code>.
      */
-    public InventoryRecord setFilmId(UInteger value) {
+    public InventoryRecord setFilmId(Integer value) {
         set(1, value);
         return this;
     }
@@ -46,14 +46,14 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Getter for <code>sakila.inventory.film_id</code>.
      */
-    public UInteger getFilmId() {
-        return (UInteger) get(1);
+    public Integer getFilmId() {
+        return (Integer) get(1);
     }
 
     /**
      * Setter for <code>sakila.inventory.store_id</code>.
      */
-    public InventoryRecord setStoreId(UInteger value) {
+    public InventoryRecord setStoreId(Integer value) {
         set(2, value);
         return this;
     }
@@ -61,8 +61,8 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Getter for <code>sakila.inventory.store_id</code>.
      */
-    public UInteger getStoreId() {
-        return (UInteger) get(2);
+    public Integer getStoreId() {
+        return (Integer) get(2);
     }
 
     /**
@@ -85,7 +85,7 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -97,14 +97,14 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
      * Create a detached InventoryRecord
      */
     public InventoryRecord() {
-        super(Inventory.INVENTORY);
+        super(JInventory.INVENTORY);
     }
 
     /**
      * Create a detached, initialised InventoryRecord
      */
-    public InventoryRecord(UInteger inventoryId, UInteger filmId, UInteger storeId, LocalDateTime lastUpdate) {
-        super(Inventory.INVENTORY);
+    public InventoryRecord(Integer inventoryId, Integer filmId, Integer storeId, LocalDateTime lastUpdate) {
+        super(JInventory.INVENTORY);
 
         setInventoryId(inventoryId);
         setFilmId(filmId);
@@ -116,8 +116,8 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Create a detached, initialised InventoryRecord
      */
-    public InventoryRecord(org.jooq.generated.tables.pojos.Inventory value) {
-        super(Inventory.INVENTORY);
+    public InventoryRecord(Inventory value) {
+        super(JInventory.INVENTORY);
 
         if (value != null) {
             setInventoryId(value.getInventoryId());

@@ -10,11 +10,9 @@ import java.time.Year;
 
 import org.jooq.Record1;
 import org.jooq.generated.enums.FilmRating;
-import org.jooq.generated.tables.Film;
+import org.jooq.generated.tables.JFilm;
+import org.jooq.generated.tables.pojos.Film;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UByte;
-import org.jooq.types.UInteger;
-import org.jooq.types.UShort;
 
 
 /**
@@ -28,7 +26,7 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Setter for <code>sakila.film.film_id</code>.
      */
-    public FilmRecord setFilmId(UInteger value) {
+    public FilmRecord setFilmId(Integer value) {
         set(0, value);
         return this;
     }
@@ -36,8 +34,8 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.film_id</code>.
      */
-    public UInteger getFilmId() {
-        return (UInteger) get(0);
+    public Integer getFilmId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -88,7 +86,7 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Setter for <code>sakila.film.language_id</code>.
      */
-    public FilmRecord setLanguageId(UInteger value) {
+    public FilmRecord setLanguageId(Integer value) {
         set(4, value);
         return this;
     }
@@ -96,14 +94,14 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.language_id</code>.
      */
-    public UInteger getLanguageId() {
-        return (UInteger) get(4);
+    public Integer getLanguageId() {
+        return (Integer) get(4);
     }
 
     /**
      * Setter for <code>sakila.film.original_language_id</code>.
      */
-    public FilmRecord setOriginalLanguageId(UInteger value) {
+    public FilmRecord setOriginalLanguageId(Integer value) {
         set(5, value);
         return this;
     }
@@ -111,14 +109,14 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.original_language_id</code>.
      */
-    public UInteger getOriginalLanguageId() {
-        return (UInteger) get(5);
+    public Integer getOriginalLanguageId() {
+        return (Integer) get(5);
     }
 
     /**
      * Setter for <code>sakila.film.rental_duration</code>.
      */
-    public FilmRecord setRentalDuration(UByte value) {
+    public FilmRecord setRentalDuration(Byte value) {
         set(6, value);
         return this;
     }
@@ -126,8 +124,8 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.rental_duration</code>.
      */
-    public UByte getRentalDuration() {
-        return (UByte) get(6);
+    public Byte getRentalDuration() {
+        return (Byte) get(6);
     }
 
     /**
@@ -148,7 +146,7 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Setter for <code>sakila.film.length</code>.
      */
-    public FilmRecord setLength(UShort value) {
+    public FilmRecord setLength(Short value) {
         set(8, value);
         return this;
     }
@@ -156,8 +154,8 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.length</code>.
      */
-    public UShort getLength() {
-        return (UShort) get(8);
+    public Short getLength() {
+        return (Short) get(8);
     }
 
     /**
@@ -225,7 +223,7 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -237,14 +235,14 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
      * Create a detached FilmRecord
      */
     public FilmRecord() {
-        super(Film.FILM);
+        super(JFilm.FILM);
     }
 
     /**
      * Create a detached, initialised FilmRecord
      */
-    public FilmRecord(UInteger filmId, String title, String description, Year releaseYear, UInteger languageId, UInteger originalLanguageId, UByte rentalDuration, BigDecimal rentalRate, UShort length, BigDecimal replacementCost, FilmRating rating, String specialFeatures, LocalDateTime lastUpdate) {
-        super(Film.FILM);
+    public FilmRecord(Integer filmId, String title, String description, Year releaseYear, Integer languageId, Integer originalLanguageId, Byte rentalDuration, BigDecimal rentalRate, Short length, BigDecimal replacementCost, FilmRating rating, String specialFeatures, LocalDateTime lastUpdate) {
+        super(JFilm.FILM);
 
         setFilmId(filmId);
         setTitle(title);
@@ -265,8 +263,8 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Create a detached, initialised FilmRecord
      */
-    public FilmRecord(org.jooq.generated.tables.pojos.Film value) {
-        super(Film.FILM);
+    public FilmRecord(Film value) {
+        super(JFilm.FILM);
 
         if (value != null) {
             setFilmId(value.getFilmId());

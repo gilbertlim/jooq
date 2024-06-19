@@ -4,9 +4,9 @@
 package org.jooq.generated.tables.records;
 
 
-import org.jooq.generated.tables.ActorInfo;
+import org.jooq.generated.tables.JActorInfo;
+import org.jooq.generated.tables.pojos.ActorInfo;
 import org.jooq.impl.TableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -20,7 +20,7 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
     /**
      * Setter for <code>sakila.actor_info.actor_id</code>.
      */
-    public ActorInfoRecord setActorId(UInteger value) {
+    public ActorInfoRecord setActorId(Integer value) {
         set(0, value);
         return this;
     }
@@ -28,8 +28,8 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
     /**
      * Getter for <code>sakila.actor_info.actor_id</code>.
      */
-    public UInteger getActorId() {
-        return (UInteger) get(0);
+    public Integer getActorId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -85,14 +85,14 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
      * Create a detached ActorInfoRecord
      */
     public ActorInfoRecord() {
-        super(ActorInfo.ACTOR_INFO);
+        super(JActorInfo.ACTOR_INFO);
     }
 
     /**
      * Create a detached, initialised ActorInfoRecord
      */
-    public ActorInfoRecord(UInteger actorId, String firstName, String lastName, String filmInfo) {
-        super(ActorInfo.ACTOR_INFO);
+    public ActorInfoRecord(Integer actorId, String firstName, String lastName, String filmInfo) {
+        super(JActorInfo.ACTOR_INFO);
 
         setActorId(actorId);
         setFirstName(firstName);
@@ -104,8 +104,8 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
     /**
      * Create a detached, initialised ActorInfoRecord
      */
-    public ActorInfoRecord(org.jooq.generated.tables.pojos.ActorInfo value) {
-        super(ActorInfo.ACTOR_INFO);
+    public ActorInfoRecord(ActorInfo value) {
+        super(JActorInfo.ACTOR_INFO);
 
         if (value != null) {
             setActorId(value.getActorId());

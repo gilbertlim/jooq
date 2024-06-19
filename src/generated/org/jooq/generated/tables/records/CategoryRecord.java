@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Category;
+import org.jooq.generated.tables.JCategory;
+import org.jooq.generated.tables.pojos.Category;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> {
     /**
      * Setter for <code>sakila.category.category_id</code>.
      */
-    public CategoryRecord setCategoryId(UInteger value) {
+    public CategoryRecord setCategoryId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> {
     /**
      * Getter for <code>sakila.category.category_id</code>.
      */
-    public UInteger getCategoryId() {
-        return (UInteger) get(0);
+    public Integer getCategoryId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -70,7 +70,7 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -82,14 +82,14 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> {
      * Create a detached CategoryRecord
      */
     public CategoryRecord() {
-        super(Category.CATEGORY);
+        super(JCategory.CATEGORY);
     }
 
     /**
      * Create a detached, initialised CategoryRecord
      */
-    public CategoryRecord(UInteger categoryId, String name, LocalDateTime lastUpdate) {
-        super(Category.CATEGORY);
+    public CategoryRecord(Integer categoryId, String name, LocalDateTime lastUpdate) {
+        super(JCategory.CATEGORY);
 
         setCategoryId(categoryId);
         setName(name);
@@ -100,8 +100,8 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> {
     /**
      * Create a detached, initialised CategoryRecord
      */
-    public CategoryRecord(org.jooq.generated.tables.pojos.Category value) {
-        super(Category.CATEGORY);
+    public CategoryRecord(Category value) {
+        super(JCategory.CATEGORY);
 
         if (value != null) {
             setCategoryId(value.getCategoryId());

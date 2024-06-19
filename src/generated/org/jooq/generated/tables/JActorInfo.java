@@ -18,26 +18,25 @@ import org.jooq.Stringly;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.TableOptions;
-import org.jooq.generated.Sakila;
+import org.jooq.generated.JSakila;
 import org.jooq.generated.tables.records.ActorInfoRecord;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
-import org.jooq.types.UInteger;
 
 
 /**
  * VIEW
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class ActorInfo extends TableImpl<ActorInfoRecord> {
+public class JActorInfo extends TableImpl<ActorInfoRecord> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>sakila.actor_info</code>
      */
-    public static final ActorInfo ACTOR_INFO = new ActorInfo();
+    public static final JActorInfo ACTOR_INFO = new JActorInfo();
 
     /**
      * The class holding records for this type
@@ -50,7 +49,7 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
     /**
      * The column <code>sakila.actor_info.actor_id</code>.
      */
-    public final TableField<ActorInfoRecord, UInteger> ACTOR_ID = createField(DSL.name("actor_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "");
+    public final TableField<ActorInfoRecord, Integer> ACTOR_ID = createField(DSL.name("actor_id"), SQLDataType.INTEGER.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "");
 
     /**
      * The column <code>sakila.actor_info.first_name</code>.
@@ -67,92 +66,92 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
      */
     public final TableField<ActorInfoRecord, String> FILM_INFO = createField(DSL.name("film_info"), SQLDataType.CLOB, this, "");
 
-    private ActorInfo(Name alias, Table<ActorInfoRecord> aliased) {
+    private JActorInfo(Name alias, Table<ActorInfoRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }
 
-    private ActorInfo(Name alias, Table<ActorInfoRecord> aliased, Field<?>[] parameters, Condition where) {
+    private JActorInfo(Name alias, Table<ActorInfoRecord> aliased, Field<?>[] parameters, Condition where) {
         super(alias, null, aliased, parameters, DSL.comment("VIEW"), TableOptions.view("create view `actor_info` as select `a`.`actor_id` AS `actor_id`,`a`.`first_name` AS `first_name`,`a`.`last_name` AS `last_name`,group_concat(distinct concat(`c`.`name`,': ',(select group_concat(`f`.`title` order by `f`.`title` ASC separator ', ') from ((`sakila`.`film` `f` join `sakila`.`film_category` `fc` on((`f`.`film_id` = `fc`.`film_id`))) join `sakila`.`film_actor` `fa` on((`f`.`film_id` = `fa`.`film_id`))) where ((`fc`.`category_id` = `c`.`category_id`) and (`fa`.`actor_id` = `a`.`actor_id`)))) order by `c`.`name` ASC separator '; ') AS `film_info` from (((`sakila`.`actor` `a` left join `sakila`.`film_actor` `fa` on((`a`.`actor_id` = `fa`.`actor_id`))) left join `sakila`.`film_category` `fc` on((`fa`.`film_id` = `fc`.`film_id`))) left join `sakila`.`category` `c` on((`fc`.`category_id` = `c`.`category_id`))) group by `a`.`actor_id`,`a`.`first_name`,`a`.`last_name`"), where);
     }
 
     /**
      * Create an aliased <code>sakila.actor_info</code> table reference
      */
-    public ActorInfo(String alias) {
+    public JActorInfo(String alias) {
         this(DSL.name(alias), ACTOR_INFO);
     }
 
     /**
      * Create an aliased <code>sakila.actor_info</code> table reference
      */
-    public ActorInfo(Name alias) {
+    public JActorInfo(Name alias) {
         this(alias, ACTOR_INFO);
     }
 
     /**
      * Create a <code>sakila.actor_info</code> table reference
      */
-    public ActorInfo() {
+    public JActorInfo() {
         this(DSL.name("actor_info"), null);
     }
 
     @Override
     public Schema getSchema() {
-        return aliased() ? null : Sakila.SAKILA;
+        return aliased() ? null : JSakila.SAKILA;
     }
 
     @Override
-    public ActorInfo as(String alias) {
-        return new ActorInfo(DSL.name(alias), this);
+    public JActorInfo as(String alias) {
+        return new JActorInfo(DSL.name(alias), this);
     }
 
     @Override
-    public ActorInfo as(Name alias) {
-        return new ActorInfo(alias, this);
+    public JActorInfo as(Name alias) {
+        return new JActorInfo(alias, this);
     }
 
     @Override
-    public ActorInfo as(Table<?> alias) {
-        return new ActorInfo(alias.getQualifiedName(), this);
-    }
-
-    /**
-     * Rename this table
-     */
-    @Override
-    public ActorInfo rename(String name) {
-        return new ActorInfo(DSL.name(name), null);
+    public JActorInfo as(Table<?> alias) {
+        return new JActorInfo(alias.getQualifiedName(), this);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public ActorInfo rename(Name name) {
-        return new ActorInfo(name, null);
+    public JActorInfo rename(String name) {
+        return new JActorInfo(DSL.name(name), null);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public ActorInfo rename(Table<?> name) {
-        return new ActorInfo(name.getQualifiedName(), null);
+    public JActorInfo rename(Name name) {
+        return new JActorInfo(name, null);
+    }
+
+    /**
+     * Rename this table
+     */
+    @Override
+    public JActorInfo rename(Table<?> name) {
+        return new JActorInfo(name.getQualifiedName(), null);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public ActorInfo where(Condition condition) {
-        return new ActorInfo(getQualifiedName(), aliased() ? this : null, null, condition);
+    public JActorInfo where(Condition condition) {
+        return new JActorInfo(getQualifiedName(), aliased() ? this : null, null, condition);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public ActorInfo where(Collection<? extends Condition> conditions) {
+    public JActorInfo where(Collection<? extends Condition> conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -160,7 +159,7 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public ActorInfo where(Condition... conditions) {
+    public JActorInfo where(Condition... conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -168,7 +167,7 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public ActorInfo where(Field<Boolean> condition) {
+    public JActorInfo where(Field<Boolean> condition) {
         return where(DSL.condition(condition));
     }
 
@@ -177,7 +176,7 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
      */
     @Override
     @PlainSQL
-    public ActorInfo where(SQL condition) {
+    public JActorInfo where(SQL condition) {
         return where(DSL.condition(condition));
     }
 
@@ -186,7 +185,7 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
      */
     @Override
     @PlainSQL
-    public ActorInfo where(@Stringly.SQL String condition) {
+    public JActorInfo where(@Stringly.SQL String condition) {
         return where(DSL.condition(condition));
     }
 
@@ -195,7 +194,7 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
      */
     @Override
     @PlainSQL
-    public ActorInfo where(@Stringly.SQL String condition, Object... binds) {
+    public JActorInfo where(@Stringly.SQL String condition, Object... binds) {
         return where(DSL.condition(condition, binds));
     }
 
@@ -204,7 +203,7 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
      */
     @Override
     @PlainSQL
-    public ActorInfo where(@Stringly.SQL String condition, QueryPart... parts) {
+    public JActorInfo where(@Stringly.SQL String condition, QueryPart... parts) {
         return where(DSL.condition(condition, parts));
     }
 
@@ -212,7 +211,7 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public ActorInfo whereExists(Select<?> select) {
+    public JActorInfo whereExists(Select<?> select) {
         return where(DSL.exists(select));
     }
 
@@ -220,7 +219,7 @@ public class ActorInfo extends TableImpl<ActorInfoRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public ActorInfo whereNotExists(Select<?> select) {
+    public JActorInfo whereNotExists(Select<?> select) {
         return where(DSL.notExists(select));
     }
 }

@@ -19,28 +19,26 @@ import org.jooq.Stringly;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.TableOptions;
-import org.jooq.generated.Sakila;
+import org.jooq.generated.JSakila;
 import org.jooq.generated.enums.NicerButSlowerFilmListRating;
 import org.jooq.generated.tables.records.NicerButSlowerFilmListRecord;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
-import org.jooq.types.UInteger;
-import org.jooq.types.UShort;
 
 
 /**
  * VIEW
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListRecord> {
+public class JNicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListRecord> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>sakila.nicer_but_slower_film_list</code>
      */
-    public static final NicerButSlowerFilmList NICER_BUT_SLOWER_FILM_LIST = new NicerButSlowerFilmList();
+    public static final JNicerButSlowerFilmList NICER_BUT_SLOWER_FILM_LIST = new JNicerButSlowerFilmList();
 
     /**
      * The class holding records for this type
@@ -53,7 +51,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
     /**
      * The column <code>sakila.nicer_but_slower_film_list.FID</code>.
      */
-    public final TableField<NicerButSlowerFilmListRecord, UInteger> FID = createField(DSL.name("FID"), SQLDataType.INTEGERUNSIGNED.defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "");
+    public final TableField<NicerButSlowerFilmListRecord, Integer> FID = createField(DSL.name("FID"), SQLDataType.INTEGER.defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "");
 
     /**
      * The column <code>sakila.nicer_but_slower_film_list.title</code>.
@@ -78,7 +76,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
     /**
      * The column <code>sakila.nicer_but_slower_film_list.length</code>.
      */
-    public final TableField<NicerButSlowerFilmListRecord, UShort> LENGTH = createField(DSL.name("length"), SQLDataType.SMALLINTUNSIGNED, this, "");
+    public final TableField<NicerButSlowerFilmListRecord, Short> LENGTH = createField(DSL.name("length"), SQLDataType.SMALLINT, this, "");
 
     /**
      * The column <code>sakila.nicer_but_slower_film_list.rating</code>.
@@ -90,11 +88,11 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      */
     public final TableField<NicerButSlowerFilmListRecord, String> ACTORS = createField(DSL.name("actors"), SQLDataType.CLOB, this, "");
 
-    private NicerButSlowerFilmList(Name alias, Table<NicerButSlowerFilmListRecord> aliased) {
+    private JNicerButSlowerFilmList(Name alias, Table<NicerButSlowerFilmListRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }
 
-    private NicerButSlowerFilmList(Name alias, Table<NicerButSlowerFilmListRecord> aliased, Field<?>[] parameters, Condition where) {
+    private JNicerButSlowerFilmList(Name alias, Table<NicerButSlowerFilmListRecord> aliased, Field<?>[] parameters, Condition where) {
         super(alias, null, aliased, parameters, DSL.comment("VIEW"), TableOptions.view("create view `nicer_but_slower_film_list` as select `sakila`.`film`.`film_id` AS `FID`,`sakila`.`film`.`title` AS `title`,`sakila`.`film`.`description` AS `description`,`sakila`.`category`.`name` AS `category`,`sakila`.`film`.`rental_rate` AS `price`,`sakila`.`film`.`length` AS `length`,`sakila`.`film`.`rating` AS `rating`,group_concat(concat(concat(upper(substr(`sakila`.`actor`.`first_name`,1,1)),lower(substr(`sakila`.`actor`.`first_name`,2,length(`sakila`.`actor`.`first_name`))),' ',concat(upper(substr(`sakila`.`actor`.`last_name`,1,1)),lower(substr(`sakila`.`actor`.`last_name`,2,length(`sakila`.`actor`.`last_name`)))))) separator ', ') AS `actors` from ((((`sakila`.`category` left join `sakila`.`film_category` on((`sakila`.`category`.`category_id` = `sakila`.`film_category`.`category_id`))) left join `sakila`.`film` on((`sakila`.`film_category`.`film_id` = `sakila`.`film`.`film_id`))) join `sakila`.`film_actor` on((`sakila`.`film`.`film_id` = `sakila`.`film_actor`.`film_id`))) join `sakila`.`actor` on((`sakila`.`film_actor`.`actor_id` = `sakila`.`actor`.`actor_id`))) group by `sakila`.`film`.`film_id`,`sakila`.`film`.`title`,`sakila`.`film`.`description`,`sakila`.`film`.`rental_rate`,`sakila`.`film`.`length`,`sakila`.`film`.`rating`,`sakila`.`category`.`name`"), where);
     }
 
@@ -102,7 +100,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      * Create an aliased <code>sakila.nicer_but_slower_film_list</code> table
      * reference
      */
-    public NicerButSlowerFilmList(String alias) {
+    public JNicerButSlowerFilmList(String alias) {
         this(DSL.name(alias), NICER_BUT_SLOWER_FILM_LIST);
     }
 
@@ -110,74 +108,74 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      * Create an aliased <code>sakila.nicer_but_slower_film_list</code> table
      * reference
      */
-    public NicerButSlowerFilmList(Name alias) {
+    public JNicerButSlowerFilmList(Name alias) {
         this(alias, NICER_BUT_SLOWER_FILM_LIST);
     }
 
     /**
      * Create a <code>sakila.nicer_but_slower_film_list</code> table reference
      */
-    public NicerButSlowerFilmList() {
+    public JNicerButSlowerFilmList() {
         this(DSL.name("nicer_but_slower_film_list"), null);
     }
 
     @Override
     public Schema getSchema() {
-        return aliased() ? null : Sakila.SAKILA;
+        return aliased() ? null : JSakila.SAKILA;
     }
 
     @Override
-    public NicerButSlowerFilmList as(String alias) {
-        return new NicerButSlowerFilmList(DSL.name(alias), this);
+    public JNicerButSlowerFilmList as(String alias) {
+        return new JNicerButSlowerFilmList(DSL.name(alias), this);
     }
 
     @Override
-    public NicerButSlowerFilmList as(Name alias) {
-        return new NicerButSlowerFilmList(alias, this);
+    public JNicerButSlowerFilmList as(Name alias) {
+        return new JNicerButSlowerFilmList(alias, this);
     }
 
     @Override
-    public NicerButSlowerFilmList as(Table<?> alias) {
-        return new NicerButSlowerFilmList(alias.getQualifiedName(), this);
-    }
-
-    /**
-     * Rename this table
-     */
-    @Override
-    public NicerButSlowerFilmList rename(String name) {
-        return new NicerButSlowerFilmList(DSL.name(name), null);
+    public JNicerButSlowerFilmList as(Table<?> alias) {
+        return new JNicerButSlowerFilmList(alias.getQualifiedName(), this);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public NicerButSlowerFilmList rename(Name name) {
-        return new NicerButSlowerFilmList(name, null);
+    public JNicerButSlowerFilmList rename(String name) {
+        return new JNicerButSlowerFilmList(DSL.name(name), null);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public NicerButSlowerFilmList rename(Table<?> name) {
-        return new NicerButSlowerFilmList(name.getQualifiedName(), null);
+    public JNicerButSlowerFilmList rename(Name name) {
+        return new JNicerButSlowerFilmList(name, null);
+    }
+
+    /**
+     * Rename this table
+     */
+    @Override
+    public JNicerButSlowerFilmList rename(Table<?> name) {
+        return new JNicerButSlowerFilmList(name.getQualifiedName(), null);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public NicerButSlowerFilmList where(Condition condition) {
-        return new NicerButSlowerFilmList(getQualifiedName(), aliased() ? this : null, null, condition);
+    public JNicerButSlowerFilmList where(Condition condition) {
+        return new JNicerButSlowerFilmList(getQualifiedName(), aliased() ? this : null, null, condition);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public NicerButSlowerFilmList where(Collection<? extends Condition> conditions) {
+    public JNicerButSlowerFilmList where(Collection<? extends Condition> conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -185,7 +183,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      * Create an inline derived table from this table
      */
     @Override
-    public NicerButSlowerFilmList where(Condition... conditions) {
+    public JNicerButSlowerFilmList where(Condition... conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -193,7 +191,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      * Create an inline derived table from this table
      */
     @Override
-    public NicerButSlowerFilmList where(Field<Boolean> condition) {
+    public JNicerButSlowerFilmList where(Field<Boolean> condition) {
         return where(DSL.condition(condition));
     }
 
@@ -202,7 +200,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      */
     @Override
     @PlainSQL
-    public NicerButSlowerFilmList where(SQL condition) {
+    public JNicerButSlowerFilmList where(SQL condition) {
         return where(DSL.condition(condition));
     }
 
@@ -211,7 +209,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      */
     @Override
     @PlainSQL
-    public NicerButSlowerFilmList where(@Stringly.SQL String condition) {
+    public JNicerButSlowerFilmList where(@Stringly.SQL String condition) {
         return where(DSL.condition(condition));
     }
 
@@ -220,7 +218,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      */
     @Override
     @PlainSQL
-    public NicerButSlowerFilmList where(@Stringly.SQL String condition, Object... binds) {
+    public JNicerButSlowerFilmList where(@Stringly.SQL String condition, Object... binds) {
         return where(DSL.condition(condition, binds));
     }
 
@@ -229,7 +227,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      */
     @Override
     @PlainSQL
-    public NicerButSlowerFilmList where(@Stringly.SQL String condition, QueryPart... parts) {
+    public JNicerButSlowerFilmList where(@Stringly.SQL String condition, QueryPart... parts) {
         return where(DSL.condition(condition, parts));
     }
 
@@ -237,7 +235,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      * Create an inline derived table from this table
      */
     @Override
-    public NicerButSlowerFilmList whereExists(Select<?> select) {
+    public JNicerButSlowerFilmList whereExists(Select<?> select) {
         return where(DSL.exists(select));
     }
 
@@ -245,7 +243,7 @@ public class NicerButSlowerFilmList extends TableImpl<NicerButSlowerFilmListReco
      * Create an inline derived table from this table
      */
     @Override
-    public NicerButSlowerFilmList whereNotExists(Select<?> select) {
+    public JNicerButSlowerFilmList whereNotExists(Select<?> select) {
         return where(DSL.notExists(select));
     }
 }

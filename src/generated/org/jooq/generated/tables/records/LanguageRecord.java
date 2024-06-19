@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Language;
+import org.jooq.generated.tables.JLanguage;
+import org.jooq.generated.tables.pojos.Language;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class LanguageRecord extends UpdatableRecordImpl<LanguageRecord> {
     /**
      * Setter for <code>sakila.language.language_id</code>.
      */
-    public LanguageRecord setLanguageId(UInteger value) {
+    public LanguageRecord setLanguageId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class LanguageRecord extends UpdatableRecordImpl<LanguageRecord> {
     /**
      * Getter for <code>sakila.language.language_id</code>.
      */
-    public UInteger getLanguageId() {
-        return (UInteger) get(0);
+    public Integer getLanguageId() {
+        return (Integer) get(0);
     }
 
     /**
@@ -70,7 +70,7 @@ public class LanguageRecord extends UpdatableRecordImpl<LanguageRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -82,14 +82,14 @@ public class LanguageRecord extends UpdatableRecordImpl<LanguageRecord> {
      * Create a detached LanguageRecord
      */
     public LanguageRecord() {
-        super(Language.LANGUAGE);
+        super(JLanguage.LANGUAGE);
     }
 
     /**
      * Create a detached, initialised LanguageRecord
      */
-    public LanguageRecord(UInteger languageId, String name, LocalDateTime lastUpdate) {
-        super(Language.LANGUAGE);
+    public LanguageRecord(Integer languageId, String name, LocalDateTime lastUpdate) {
+        super(JLanguage.LANGUAGE);
 
         setLanguageId(languageId);
         setName(name);
@@ -100,8 +100,8 @@ public class LanguageRecord extends UpdatableRecordImpl<LanguageRecord> {
     /**
      * Create a detached, initialised LanguageRecord
      */
-    public LanguageRecord(org.jooq.generated.tables.pojos.Language value) {
-        super(Language.LANGUAGE);
+    public LanguageRecord(Language value) {
+        super(JLanguage.LANGUAGE);
 
         if (value != null) {
             setLanguageId(value.getLanguageId());

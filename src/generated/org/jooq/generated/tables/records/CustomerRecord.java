@@ -7,9 +7,9 @@ package org.jooq.generated.tables.records;
 import java.time.LocalDateTime;
 
 import org.jooq.Record1;
-import org.jooq.generated.tables.Customer;
+import org.jooq.generated.tables.JCustomer;
+import org.jooq.generated.tables.pojos.Customer;
 import org.jooq.impl.UpdatableRecordImpl;
-import org.jooq.types.UInteger;
 
 
 /**
@@ -23,7 +23,7 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Setter for <code>sakila.customer.customer_id</code>.
      */
-    public CustomerRecord setCustomerId(UInteger value) {
+    public CustomerRecord setCustomerId(Integer value) {
         set(0, value);
         return this;
     }
@@ -31,14 +31,14 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Getter for <code>sakila.customer.customer_id</code>.
      */
-    public UInteger getCustomerId() {
-        return (UInteger) get(0);
+    public Integer getCustomerId() {
+        return (Integer) get(0);
     }
 
     /**
      * Setter for <code>sakila.customer.store_id</code>.
      */
-    public CustomerRecord setStoreId(UInteger value) {
+    public CustomerRecord setStoreId(Integer value) {
         set(1, value);
         return this;
     }
@@ -46,8 +46,8 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Getter for <code>sakila.customer.store_id</code>.
      */
-    public UInteger getStoreId() {
-        return (UInteger) get(1);
+    public Integer getStoreId() {
+        return (Integer) get(1);
     }
 
     /**
@@ -98,7 +98,7 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Setter for <code>sakila.customer.address_id</code>.
      */
-    public CustomerRecord setAddressId(UInteger value) {
+    public CustomerRecord setAddressId(Integer value) {
         set(5, value);
         return this;
     }
@@ -106,8 +106,8 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Getter for <code>sakila.customer.address_id</code>.
      */
-    public UInteger getAddressId() {
-        return (UInteger) get(5);
+    public Integer getAddressId() {
+        return (Integer) get(5);
     }
 
     /**
@@ -160,7 +160,7 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<UInteger> key() {
+    public Record1<Integer> key() {
         return (Record1) super.key();
     }
 
@@ -172,14 +172,14 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
      * Create a detached CustomerRecord
      */
     public CustomerRecord() {
-        super(Customer.CUSTOMER);
+        super(JCustomer.CUSTOMER);
     }
 
     /**
      * Create a detached, initialised CustomerRecord
      */
-    public CustomerRecord(UInteger customerId, UInteger storeId, String firstName, String lastName, String email, UInteger addressId, Byte active, LocalDateTime createDate, LocalDateTime lastUpdate) {
-        super(Customer.CUSTOMER);
+    public CustomerRecord(Integer customerId, Integer storeId, String firstName, String lastName, String email, Integer addressId, Byte active, LocalDateTime createDate, LocalDateTime lastUpdate) {
+        super(JCustomer.CUSTOMER);
 
         setCustomerId(customerId);
         setStoreId(storeId);
@@ -196,8 +196,8 @@ public class CustomerRecord extends UpdatableRecordImpl<CustomerRecord> {
     /**
      * Create a detached, initialised CustomerRecord
      */
-    public CustomerRecord(org.jooq.generated.tables.pojos.Customer value) {
-        super(Customer.CUSTOMER);
+    public CustomerRecord(Customer value) {
+        super(JCustomer.CUSTOMER);
 
         if (value != null) {
             setCustomerId(value.getCustomerId());

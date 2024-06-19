@@ -10,9 +10,6 @@ import java.time.LocalDateTime;
 import java.time.Year;
 
 import org.jooq.generated.enums.FilmRating;
-import org.jooq.types.UByte;
-import org.jooq.types.UInteger;
-import org.jooq.types.UShort;
 
 
 /**
@@ -23,15 +20,15 @@ public class Film implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private UInteger filmId;
+    private Integer filmId;
     private String title;
     private String description;
     private Year releaseYear;
-    private UInteger languageId;
-    private UInteger originalLanguageId;
-    private UByte rentalDuration;
+    private Integer languageId;
+    private Integer originalLanguageId;
+    private Byte rentalDuration;
     private BigDecimal rentalRate;
-    private UShort length;
+    private Short length;
     private BigDecimal replacementCost;
     private FilmRating rating;
     private String specialFeatures;
@@ -56,15 +53,15 @@ public class Film implements Serializable {
     }
 
     public Film(
-        UInteger filmId,
+        Integer filmId,
         String title,
         String description,
         Year releaseYear,
-        UInteger languageId,
-        UInteger originalLanguageId,
-        UByte rentalDuration,
+        Integer languageId,
+        Integer originalLanguageId,
+        Byte rentalDuration,
         BigDecimal rentalRate,
-        UShort length,
+        Short length,
         BigDecimal replacementCost,
         FilmRating rating,
         String specialFeatures,
@@ -88,14 +85,14 @@ public class Film implements Serializable {
     /**
      * Getter for <code>sakila.film.film_id</code>.
      */
-    public UInteger getFilmId() {
+    public Integer getFilmId() {
         return this.filmId;
     }
 
     /**
      * Setter for <code>sakila.film.film_id</code>.
      */
-    public Film setFilmId(UInteger filmId) {
+    public Film setFilmId(Integer filmId) {
         this.filmId = filmId;
         return this;
     }
@@ -148,14 +145,14 @@ public class Film implements Serializable {
     /**
      * Getter for <code>sakila.film.language_id</code>.
      */
-    public UInteger getLanguageId() {
+    public Integer getLanguageId() {
         return this.languageId;
     }
 
     /**
      * Setter for <code>sakila.film.language_id</code>.
      */
-    public Film setLanguageId(UInteger languageId) {
+    public Film setLanguageId(Integer languageId) {
         this.languageId = languageId;
         return this;
     }
@@ -163,14 +160,14 @@ public class Film implements Serializable {
     /**
      * Getter for <code>sakila.film.original_language_id</code>.
      */
-    public UInteger getOriginalLanguageId() {
+    public Integer getOriginalLanguageId() {
         return this.originalLanguageId;
     }
 
     /**
      * Setter for <code>sakila.film.original_language_id</code>.
      */
-    public Film setOriginalLanguageId(UInteger originalLanguageId) {
+    public Film setOriginalLanguageId(Integer originalLanguageId) {
         this.originalLanguageId = originalLanguageId;
         return this;
     }
@@ -178,14 +175,14 @@ public class Film implements Serializable {
     /**
      * Getter for <code>sakila.film.rental_duration</code>.
      */
-    public UByte getRentalDuration() {
+    public Byte getRentalDuration() {
         return this.rentalDuration;
     }
 
     /**
      * Setter for <code>sakila.film.rental_duration</code>.
      */
-    public Film setRentalDuration(UByte rentalDuration) {
+    public Film setRentalDuration(Byte rentalDuration) {
         this.rentalDuration = rentalDuration;
         return this;
     }
@@ -208,14 +205,14 @@ public class Film implements Serializable {
     /**
      * Getter for <code>sakila.film.length</code>.
      */
-    public UShort getLength() {
+    public Short getLength() {
         return this.length;
     }
 
     /**
      * Setter for <code>sakila.film.length</code>.
      */
-    public Film setLength(UShort length) {
+    public Film setLength(Short length) {
         this.length = length;
         return this;
     }

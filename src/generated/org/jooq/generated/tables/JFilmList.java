@@ -19,28 +19,26 @@ import org.jooq.Stringly;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.TableOptions;
-import org.jooq.generated.Sakila;
+import org.jooq.generated.JSakila;
 import org.jooq.generated.enums.FilmListRating;
 import org.jooq.generated.tables.records.FilmListRecord;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
-import org.jooq.types.UInteger;
-import org.jooq.types.UShort;
 
 
 /**
  * VIEW
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
-public class FilmList extends TableImpl<FilmListRecord> {
+public class JFilmList extends TableImpl<FilmListRecord> {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * The reference instance of <code>sakila.film_list</code>
      */
-    public static final FilmList FILM_LIST = new FilmList();
+    public static final JFilmList FILM_LIST = new JFilmList();
 
     /**
      * The class holding records for this type
@@ -53,7 +51,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
     /**
      * The column <code>sakila.film_list.FID</code>.
      */
-    public final TableField<FilmListRecord, UInteger> FID = createField(DSL.name("FID"), SQLDataType.INTEGERUNSIGNED.defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "");
+    public final TableField<FilmListRecord, Integer> FID = createField(DSL.name("FID"), SQLDataType.INTEGER.defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "");
 
     /**
      * The column <code>sakila.film_list.title</code>.
@@ -78,7 +76,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
     /**
      * The column <code>sakila.film_list.length</code>.
      */
-    public final TableField<FilmListRecord, UShort> LENGTH = createField(DSL.name("length"), SQLDataType.SMALLINTUNSIGNED, this, "");
+    public final TableField<FilmListRecord, Short> LENGTH = createField(DSL.name("length"), SQLDataType.SMALLINT, this, "");
 
     /**
      * The column <code>sakila.film_list.rating</code>.
@@ -90,92 +88,92 @@ public class FilmList extends TableImpl<FilmListRecord> {
      */
     public final TableField<FilmListRecord, String> ACTORS = createField(DSL.name("actors"), SQLDataType.CLOB, this, "");
 
-    private FilmList(Name alias, Table<FilmListRecord> aliased) {
+    private JFilmList(Name alias, Table<FilmListRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
     }
 
-    private FilmList(Name alias, Table<FilmListRecord> aliased, Field<?>[] parameters, Condition where) {
+    private JFilmList(Name alias, Table<FilmListRecord> aliased, Field<?>[] parameters, Condition where) {
         super(alias, null, aliased, parameters, DSL.comment("VIEW"), TableOptions.view("create view `film_list` as select `sakila`.`film`.`film_id` AS `FID`,`sakila`.`film`.`title` AS `title`,`sakila`.`film`.`description` AS `description`,`sakila`.`category`.`name` AS `category`,`sakila`.`film`.`rental_rate` AS `price`,`sakila`.`film`.`length` AS `length`,`sakila`.`film`.`rating` AS `rating`,group_concat(concat(`sakila`.`actor`.`first_name`,' ',`sakila`.`actor`.`last_name`) separator ', ') AS `actors` from ((((`sakila`.`category` left join `sakila`.`film_category` on((`sakila`.`category`.`category_id` = `sakila`.`film_category`.`category_id`))) left join `sakila`.`film` on((`sakila`.`film_category`.`film_id` = `sakila`.`film`.`film_id`))) join `sakila`.`film_actor` on((`sakila`.`film`.`film_id` = `sakila`.`film_actor`.`film_id`))) join `sakila`.`actor` on((`sakila`.`film_actor`.`actor_id` = `sakila`.`actor`.`actor_id`))) group by `sakila`.`film`.`film_id`,`sakila`.`film`.`title`,`sakila`.`film`.`description`,`sakila`.`film`.`rental_rate`,`sakila`.`film`.`length`,`sakila`.`film`.`rating`,`sakila`.`category`.`name`"), where);
     }
 
     /**
      * Create an aliased <code>sakila.film_list</code> table reference
      */
-    public FilmList(String alias) {
+    public JFilmList(String alias) {
         this(DSL.name(alias), FILM_LIST);
     }
 
     /**
      * Create an aliased <code>sakila.film_list</code> table reference
      */
-    public FilmList(Name alias) {
+    public JFilmList(Name alias) {
         this(alias, FILM_LIST);
     }
 
     /**
      * Create a <code>sakila.film_list</code> table reference
      */
-    public FilmList() {
+    public JFilmList() {
         this(DSL.name("film_list"), null);
     }
 
     @Override
     public Schema getSchema() {
-        return aliased() ? null : Sakila.SAKILA;
+        return aliased() ? null : JSakila.SAKILA;
     }
 
     @Override
-    public FilmList as(String alias) {
-        return new FilmList(DSL.name(alias), this);
+    public JFilmList as(String alias) {
+        return new JFilmList(DSL.name(alias), this);
     }
 
     @Override
-    public FilmList as(Name alias) {
-        return new FilmList(alias, this);
+    public JFilmList as(Name alias) {
+        return new JFilmList(alias, this);
     }
 
     @Override
-    public FilmList as(Table<?> alias) {
-        return new FilmList(alias.getQualifiedName(), this);
-    }
-
-    /**
-     * Rename this table
-     */
-    @Override
-    public FilmList rename(String name) {
-        return new FilmList(DSL.name(name), null);
+    public JFilmList as(Table<?> alias) {
+        return new JFilmList(alias.getQualifiedName(), this);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public FilmList rename(Name name) {
-        return new FilmList(name, null);
+    public JFilmList rename(String name) {
+        return new JFilmList(DSL.name(name), null);
     }
 
     /**
      * Rename this table
      */
     @Override
-    public FilmList rename(Table<?> name) {
-        return new FilmList(name.getQualifiedName(), null);
+    public JFilmList rename(Name name) {
+        return new JFilmList(name, null);
+    }
+
+    /**
+     * Rename this table
+     */
+    @Override
+    public JFilmList rename(Table<?> name) {
+        return new JFilmList(name.getQualifiedName(), null);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public FilmList where(Condition condition) {
-        return new FilmList(getQualifiedName(), aliased() ? this : null, null, condition);
+    public JFilmList where(Condition condition) {
+        return new JFilmList(getQualifiedName(), aliased() ? this : null, null, condition);
     }
 
     /**
      * Create an inline derived table from this table
      */
     @Override
-    public FilmList where(Collection<? extends Condition> conditions) {
+    public JFilmList where(Collection<? extends Condition> conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -183,7 +181,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public FilmList where(Condition... conditions) {
+    public JFilmList where(Condition... conditions) {
         return where(DSL.and(conditions));
     }
 
@@ -191,7 +189,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public FilmList where(Field<Boolean> condition) {
+    public JFilmList where(Field<Boolean> condition) {
         return where(DSL.condition(condition));
     }
 
@@ -200,7 +198,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
      */
     @Override
     @PlainSQL
-    public FilmList where(SQL condition) {
+    public JFilmList where(SQL condition) {
         return where(DSL.condition(condition));
     }
 
@@ -209,7 +207,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
      */
     @Override
     @PlainSQL
-    public FilmList where(@Stringly.SQL String condition) {
+    public JFilmList where(@Stringly.SQL String condition) {
         return where(DSL.condition(condition));
     }
 
@@ -218,7 +216,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
      */
     @Override
     @PlainSQL
-    public FilmList where(@Stringly.SQL String condition, Object... binds) {
+    public JFilmList where(@Stringly.SQL String condition, Object... binds) {
         return where(DSL.condition(condition, binds));
     }
 
@@ -227,7 +225,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
      */
     @Override
     @PlainSQL
-    public FilmList where(@Stringly.SQL String condition, QueryPart... parts) {
+    public JFilmList where(@Stringly.SQL String condition, QueryPart... parts) {
         return where(DSL.condition(condition, parts));
     }
 
@@ -235,7 +233,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public FilmList whereExists(Select<?> select) {
+    public JFilmList whereExists(Select<?> select) {
         return where(DSL.exists(select));
     }
 
@@ -243,7 +241,7 @@ public class FilmList extends TableImpl<FilmListRecord> {
      * Create an inline derived table from this table
      */
     @Override
-    public FilmList whereNotExists(Select<?> select) {
+    public JFilmList whereNotExists(Select<?> select) {
         return where(DSL.notExists(select));
     }
 }
