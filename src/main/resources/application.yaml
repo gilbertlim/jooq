@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: jooq
+
+  datasource:
+    url: ''
+    username: root
+    password: passwd
+

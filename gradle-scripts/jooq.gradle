@@ -1,0 +1,48 @@
+
+String dbUser   = System.properties["db-user"]   ?: "root"
+String dbPasswd = System.properties["db-passwd"] ?: "passwd"
+
+jooq {
+    version = "${jooqVersion}"
+    configurations {
+        sakilaDB { // Gradle Task 명
+            generationTool {
+                jdbc { // DB 접근 관련 설정
+                    driver = 'com.mysql.cj.jdbc.Driver'
+                    url = 'jdbc:mysql://localhost:13306'
+                    user = "${dbUser}"
+                    password = "${dbPasswd}"
+                }
+                generator { // DSL을 생성하기위한 설정
+                    name = 'org.jooq.codegen.DefaultGenerator'
+                    database { // DB를 기준으로 DSL을 생성
+                        name = 'org.jooq.meta.mysql.MySQLDatabase'
+                        schemata {
+                            schema {
+                                inputSchema = 'sakila'
+                            }
+                        }
+                    }
+                    generate { // DSL 생성 옵션
+                        daos = true
+                        records = true
+                        fluentSetters = true
+                        javaTimeTypes = true
+                        deprecated = false
+                    }
+                    target { // DSL이 생성되는 폴더
+                        directory = 'src/generated'
+                    }
+                }
+            }
+        }
+    }
+}
+
+sourceSets { // src/generated 폴더의 파일들도 소스코드에 포함
+    main {
+        java {
+            srcDirs = ["src/main/java", "src/generated"]
+        }
+    }
+}
