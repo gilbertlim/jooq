@@ -34,4 +34,10 @@ class FilmRepositoryTest {
         FilmActorPageResponse filmActorPageResponse = filmService.getFilmActorPageResponse(1L, 20L);
         assertThat(filmActorPageResponse.getFilmActors()).hasSize(20);
     }
+
+    @Test
+    void oneAndMulitpleJoinTest() {
+        FilmAndActors filmAndActors = filmRepository.findFilmAndActors(1L);
+        
+    }
 }

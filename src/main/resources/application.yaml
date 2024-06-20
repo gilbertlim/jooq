@@ -3,7 +3,7 @@ spring:
     name: jooq
 
   datasource:
-    url: jdbc:mysql://localhost:13306/sakila
+    url: jdbc:mysql://localhost:13306/sakila?allowMultiQueries=true
     username: root
     password: passwd
     driver-class-name: com.mysql.cj.jdbc.Driver

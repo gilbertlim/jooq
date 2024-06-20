@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.jooq.DSLContext;
 import org.jooq.generated.tables.*;
 import org.jooq.generated.tables.pojos.Film;
-import org.jooq.impl.DSL;
+import org.jooq.generated.tables.pojos.FilmActor;
+
+import static org.jooq.impl.DSL.*;
 
 @RequiredArgsConstructor
 @Repository
@@ -37,9 +39,9 @@ public class FilmRepository {
 
     public List<FilmAndActor> findAllFilmAndActors(long page, long pageSize) {
         return dslContext.select(
-                DSL.row(FILM.fields()),
-                DSL.row(FILM_ACTOR.fields()),
-                DSL.row(ACTOR.fields())
+                row(FILM.fields()),
+                row(FILM_ACTOR.fields()),
+                row(ACTOR.fields())
             ).from(FILM_ACTOR)
             .join(FILM)
             .on(FILM.FILM_ID.eq(FILM_ACTOR.FILM_ID))
@@ -48,5 +50,19 @@ public class FilmRepository {
             .offset((page - 1) * pageSize)
             .limit(pageSize)
             .fetchInto(FilmAndActor.class);
+    }
+
+    public FilmAndActors findFilmAndActors(long filmId) {
+        return dslContext.select(
+                row(FILM.fields()),
+                multiset(
+                    select(FILM_ACTOR.fields())
+                        .from(FILM_ACTOR)
+                        .where(FILM_ACTOR.FILM_ID.eq(FILM.FILM_ID))
+                ).convertFrom(r -> r.into(FilmActor.class))
+            ).from(FILM)
+            .where(FILM.FILM_ID.eq(filmId))
+            .limit(100)
+            .fetchOneInto(FilmAndActors.class);
     }
 }
