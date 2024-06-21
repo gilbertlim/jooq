@@ -1,4 +1,4 @@
-package com.gilbert.jooq.film;
+package com.gilbert.jooq.film.repository;
 
 import org.springframework.stereotype.Repository;
 import org.jooq.Configuration;

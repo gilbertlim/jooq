@@ -1,8 +1,9 @@
-package com.gilbert.jooq.film;
+package com.gilbert.jooq.film.repository;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import com.gilbert.jooq.film.entity.*;
 import lombok.RequiredArgsConstructor;
 import org.jooq.DSLContext;
 import org.jooq.generated.tables.*;
@@ -52,7 +53,7 @@ public class FilmRepository {
             .fetchInto(FilmAndActor.class);
     }
 
-    public FilmAndActors findFilmAndActors(long filmId) {
+    public FilmAndActors findFilmAndActorsUsingSelectSubQuery(long filmId) {
         return dslContext.select(
                 row(FILM.fields()),
                 multiset(
@@ -64,5 +65,22 @@ public class FilmRepository {
             .where(FILM.FILM_ID.eq(filmId))
             .limit(100)
             .fetchOneInto(FilmAndActors.class);
+    }
+
+    public List<FilmAndActors> findFilmAndActorsUsingJoin(long filmId) {
+        return dslContext.select(
+                row(FILM.fields()).as("film"),
+                row(FILM_ACTOR.fields()).as("film_actor")
+            ).from(FILM)
+            .join(FILM_ACTOR)
+            .on(FILM_ACTOR.FILM_ID.eq(FILM.FILM_ID))
+            .where(FILM.FILM_ID.eq(filmId))
+            .limit(100)
+            .fetchGroups(record -> record.get("film", Film.class),
+                record -> record.get("film_actor", FilmActor.class))
+            .entrySet()
+            .stream()
+            .map(entry -> new FilmAndActors(entry.getKey(), entry.getValue()))
+            .toList();
     }
 }

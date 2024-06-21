@@ -1,10 +1,12 @@
-package com.gilbert.jooq.film;
+package com.gilbert.jooq.film.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import com.gilbert.jooq.web.FilmActorPageResponse;
-import com.gilbert.jooq.web.PageResponse;
+import com.gilbert.jooq.common.dto.PageResponse;
+import com.gilbert.jooq.film.dto.FilmActorPageResponse;
+import com.gilbert.jooq.film.entity.FilmAndActor;
+import com.gilbert.jooq.film.repository.FilmRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

@@ -1,4 +1,4 @@
-package com.gilbert.jooq.film;
+package com.gilbert.jooq.film.entity;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.gilbert.jooq.config;
+package com.gilbert.jooq.common.jooq.config;
 
 import org.springframework.boot.autoconfigure.jooq.DefaultConfigurationCustomizer;
 import org.springframework.context.annotation.Bean;

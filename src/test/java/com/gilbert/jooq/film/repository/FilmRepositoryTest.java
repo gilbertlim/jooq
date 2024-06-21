@@ -1,8 +1,13 @@
-package com.gilbert.jooq.film;
+package com.gilbert.jooq.film.repository;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.gilbert.jooq.web.FilmActorPageResponse;
+import com.gilbert.jooq.film.dto.FilmActorPageResponse;
+import com.gilbert.jooq.film.entity.FIlmInfo;
+import com.gilbert.jooq.film.entity.FilmAndActors;
+import com.gilbert.jooq.film.service.FilmService;
 import org.jooq.generated.tables.pojos.Film;
 import org.junit.jupiter.api.Test;
 
@@ -37,7 +42,7 @@ class FilmRepositoryTest {
 
     @Test
     void oneAndMulitpleJoinTest() {
-        FilmAndActors filmAndActors = filmRepository.findFilmAndActors(1L);
-        
+        FilmAndActors filmAndActors = filmRepository.findFilmAndActorsUsingSelectSubQuery(1L);
+        List<FilmAndActors> filmAndActors2 = filmRepository.findFilmAndActorsUsingJoin(1L);
     }
 }

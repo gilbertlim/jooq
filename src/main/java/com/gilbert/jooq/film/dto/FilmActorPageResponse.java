@@ -1,8 +1,9 @@
-package com.gilbert.jooq.web;
+package com.gilbert.jooq.film.dto;
 
 import java.util.List;
 
-import com.gilbert.jooq.film.FilmAndActor;
+import com.gilbert.jooq.common.dto.PageResponse;
+import com.gilbert.jooq.film.entity.FilmAndActor;
 import lombok.Getter;
 
 @Getter

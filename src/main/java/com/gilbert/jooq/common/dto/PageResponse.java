@@ -1,4 +1,4 @@
-package com.gilbert.jooq.web;
+package com.gilbert.jooq.common.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
