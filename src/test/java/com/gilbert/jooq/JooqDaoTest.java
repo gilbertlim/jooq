@@ -1,9 +1,11 @@
-package com.gilbert.jooq.film.repository;
+package com.gilbert.jooq;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import com.gilbert.jooq.film.repository.FilmRepositoryHasA;
+import com.gilbert.jooq.film.repository.FilmRepositoryIsA;
 import org.jooq.generated.tables.pojos.Film;
 import org.junit.jupiter.api.Test;
 
