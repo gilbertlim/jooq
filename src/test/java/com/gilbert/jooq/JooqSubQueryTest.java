@@ -10,9 +10,10 @@ import com.gilbert.jooq.film.repository.FilmRepository;
 import org.jooq.generated.tables.pojos.Film;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @SpringBootTest
 public class JooqSubQueryTest {
-
 
     @Autowired
     private FilmRepository filmRepository;
@@ -21,17 +22,20 @@ public class JooqSubQueryTest {
     void scalar() {
         String filmTitle = "EGG";
         List<FilmPriceSummary> summaries = filmRepository.findFilmPriceSummaryByFilmTitle(filmTitle);
+        assertThat(summaries).allSatisfy(summary -> assertThat(summary.getPriceCategory()).isNotNull());
     }
 
     @Test
     void inline_view() {
         String filmTitle = "EGG";
         List<FilmRentalSummary> summaries = filmRepository.findFilmRentalSummaryByFilmTitle(filmTitle);
+        assertThat(summaries).hasSizeGreaterThan(0);
     }
 
     @Test
     void where() {
         String filmTitle = "EGG";
         List<Film> films = filmRepository.findRentedFilmByFilmTitle(filmTitle);
+        assertThat(films).hasSizeGreaterThan(0);
     }
 }
