@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 import com.gilbert.jooq.actor.dto.ActorFilmographySearchCondition;
+import com.gilbert.jooq.actor.dto.ActorUpdateRequest;
 import com.gilbert.jooq.actor.entity.ActorFilmography;
+import com.gilbert.jooq.common.jooq.utils.JooqUtils;
 import org.jooq.*;
 import org.jooq.generated.tables.*;
 import org.jooq.generated.tables.daos.ActorDao;
@@ -128,5 +130,40 @@ public class ActorRepository {
                     .where(ACTOR.ACTOR_ID.eq(actorId))
             ).returning()
             .fetchOneInto(Actor.class);
+    }
+
+    public void update(Actor actor) {
+        actorDao.update(actor);
+    }
+
+    public Actor findById(Long actorId) {
+        return actorDao.findById(actorId);
+    }
+
+    public int updateWithDto(Long actorId, ActorUpdateRequest request) {
+        return dslContext.update(ACTOR)
+            .set(ACTOR.FIRST_NAME, JooqUtils.setStringIfHasText(ACTOR.FIRST_NAME, request.getFirstName()))
+            .set(ACTOR.LAST_NAME, JooqUtils.setStringIfHasText(ACTOR.LAST_NAME, request.getLastName()))
+            .where(ACTOR.ACTOR_ID.eq(actorId))
+            .execute();
+
+    }
+
+
+    public int updateWithRecord(Long actorId, ActorUpdateRequest request) {
+        ActorRecord record = dslContext.fetchOne(ACTOR, ACTOR.ACTOR_ID.eq(actorId));
+        //ActorRecord record = dslContext.newRecord(ACTOR);
+        if (StringUtils.hasText(request.getFirstName())) {
+            record.setFirstName(request.getFirstName());
+        }
+        if (StringUtils.hasText(request.getLastName())) {
+            record.setLastName(request.getLastName());
+        }
+
+        return record.update();
+        //return dslContext.update(ACTOR)
+        //    .set(record)
+        //    .where(ACTOR.ACTOR_ID.eq(actorId))
+        //    .execute();
     }
 }
