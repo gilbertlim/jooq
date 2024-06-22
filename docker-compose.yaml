@@ -7,6 +7,7 @@ services:
     # platform: linux/amd64
     volumes:
       - sakila_volume:/data
+      - ./sql:/docker-entrypoint-initdb.d
     ports:
       - '13306:3306'
     environment:
