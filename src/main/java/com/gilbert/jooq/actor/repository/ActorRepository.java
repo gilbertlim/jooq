@@ -6,17 +6,18 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 import com.gilbert.jooq.actor.dto.ActorFilmographySearchCondition;
 import com.gilbert.jooq.actor.entity.ActorFilmography;
-import lombok.RequiredArgsConstructor;
 import org.jooq.*;
 import org.jooq.generated.tables.*;
+import org.jooq.generated.tables.daos.ActorDao;
 import org.jooq.generated.tables.pojos.Actor;
 import org.jooq.generated.tables.pojos.Film;
+import org.jooq.generated.tables.records.ActorRecord;
 import org.jooq.impl.DSL;
 
 import static com.gilbert.jooq.common.jooq.utils.JooqUtils.inIfNotEmpty;
 import static org.jooq.impl.DSL.row;
+import static org.jooq.impl.DSL.select;
 
-@RequiredArgsConstructor
 @Repository
 public class ActorRepository {
 
@@ -24,6 +25,12 @@ public class ActorRepository {
     public static final FilmActor_ FILM_ACTOR = FilmActor_.FILM_ACTOR;
     public static final Film_ FILM = Film_.FILM;
     private final DSLContext dslContext;
+    private final ActorDao actorDao;
+
+    public ActorRepository(DSLContext dslContext, Configuration configuration) {
+        this.dslContext = dslContext;
+        this.actorDao = new ActorDao(configuration);
+    }
 
     public List<Actor> findByFirstNameAndLastName(String firstName, String lastName) {
         return dslContext.selectFrom(ACTOR)
@@ -65,5 +72,61 @@ public class ActorRepository {
             return DSL.noCondition();
         }
         return field.like("%" + inputString + "%");
+    }
+
+    public Actor saveByDao(Actor actor) {
+        actorDao.insert(actor);
+        return actor;
+    }
+
+    public ActorRecord saveByRecord(Actor actor) {
+        ActorRecord actorRecord = dslContext.newRecord(ACTOR, actor);
+        actorRecord.insert();
+        return actorRecord;
+    }
+
+    public Long saveWithReturningPkOnly(Actor actor) {
+        return dslContext.insertInto(ACTOR,
+                ACTOR.FIRST_NAME,
+                ACTOR.LAST_NAME
+            ).values(
+                actor.getFirstName(),
+                actor.getLastName()
+            ).returningResult(ACTOR.ACTOR_ID)
+            .fetchOneInto(Long.class);
+    }
+
+    public Actor saveWithReturning(Actor actor) {
+        return dslContext.insertInto(ACTOR,
+                ACTOR.FIRST_NAME,
+                ACTOR.LAST_NAME
+            ).values(
+                actor.getFirstName(),
+                actor.getLastName()
+            ).returning(ACTOR.fields())
+            .fetchOneInto(Actor.class);
+    }
+
+    public void bulkInsertWithRows(List<Actor> actors) {
+        var rows = actors.stream()
+            .map(actor -> row(actor.getFirstName(), actor.getLastName()))
+            .toList();
+        dslContext.insertInto(ACTOR,
+                ACTOR.FIRST_NAME,
+                ACTOR.LAST_NAME
+            ).valuesOfRows(rows)
+            .execute();
+    }
+
+    public Actor insertSelect(Long actorId) {
+        return dslContext.insertInto(ACTOR,
+                ACTOR.FIRST_NAME,
+                ACTOR.LAST_NAME
+            ).select(
+                select(ACTOR.FIRST_NAME, ACTOR.LAST_NAME)
+                    .from(ACTOR)
+                    .where(ACTOR.ACTOR_ID.eq(actorId))
+            ).returning()
+            .fetchOneInto(Actor.class);
     }
 }
