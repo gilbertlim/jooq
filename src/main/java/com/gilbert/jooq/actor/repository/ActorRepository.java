@@ -166,4 +166,21 @@ public class ActorRepository {
         //    .where(ACTOR.ACTOR_ID.eq(actorId))
         //    .execute();
     }
+
+    public int delete(Long actorId) {
+        //actorDao.deleteById(actorId);
+        return dslContext.deleteFrom(ACTOR)
+            .where(ACTOR.ACTOR_ID.eq(actorId))
+            .execute();
+    }
+
+    public int deleteWithRecord(Long actorId) {
+        ActorRecord actorRecord = dslContext.fetchOne(ACTOR, ACTOR.ACTOR_ID.eq(actorId));
+        return actorRecord.delete();
+    }
+
+    public int deleteWithNowhere() {
+        return dslContext.deleteFrom(ACTOR)
+            .execute();
+    }
 }

@@ -9,6 +9,7 @@ import org.jooq.generated.tables.pojos.Actor;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @Transactional
 @SpringBootTest
@@ -56,5 +57,22 @@ public class JooqUpdateTest {
         Actor updatedActor = actorRepository.findById(actorId);
         assertThat(updatedActor.getFirstName()).isEqualTo("Tom");
         assertThat(updatedActor.getLastName()).isEqualTo("Doe");
+    }
+
+    @Test
+    void delete() {
+        Long actorId = actorRepository.saveWithReturningPkOnly(getActor());
+        actorRepository.delete(actorId);
+    }
+
+    @Test
+    void delete_with_record() {
+        Long actorId = actorRepository.saveWithReturningPkOnly(getActor());
+        actorRepository.deleteWithRecord(actorId);
+    }
+
+    @Test
+    void delete_with_no_where() {
+        assertThatThrownBy(() -> actorRepository.deleteWithNowhere());
     }
 }
