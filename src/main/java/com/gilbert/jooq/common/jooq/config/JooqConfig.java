@@ -10,7 +10,8 @@ public class JooqConfig {
 
     @Bean
     public DefaultConfigurationCustomizer jooqDefaultConfigurationCustomizer() {
-        return c -> c.settings()
+        return c -> c.set(PerformanceListener::new)
+            .settings()
             .withRenderSchema(false) // schema가 보이지 않도록 설정
             .withExecuteUpdateWithoutWhere(ExecuteWithoutWhere.THROW)
             .withExecuteDeleteWithoutWhere(ExecuteWithoutWhere.THROW);
