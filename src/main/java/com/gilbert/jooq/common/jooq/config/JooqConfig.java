@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.jooq.DefaultConfigurationCustomize
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.jooq.conf.ExecuteWithoutWhere;
+import org.jooq.conf.RenderImplicitJoinType;
 
 @Configuration
 public class JooqConfig {
@@ -14,7 +15,11 @@ public class JooqConfig {
             .settings()
             .withRenderSchema(false) // schema가 보이지 않도록 설정
             .withExecuteUpdateWithoutWhere(ExecuteWithoutWhere.THROW)
-            .withExecuteDeleteWithoutWhere(ExecuteWithoutWhere.THROW);
+            .withExecuteDeleteWithoutWhere(ExecuteWithoutWhere.THROW)
+            //.withRenderImplicitJoinToManyType(RenderImplicitJoinType.INNER_JOIN)
+            .withRenderImplicitJoinToManyType(RenderImplicitJoinType.THROW) // 1:N 비활성화
+            .withRenderImplicitJoinType(RenderImplicitJoinType.THROW) // N:1 비활성화
+            ;
     }
 
 }

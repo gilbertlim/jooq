@@ -149,4 +149,54 @@ public class FilmRepository {
             .and(FILM.TITLE.like("%" + filmTitle + "%"))
             .fetchInto(Film.class);
     }
+
+    public List<FilmAndActor> findAllFilmAndActorsUsingImplicitPathJoinManyToOne(long page, long pageSize) {
+        return dslContext.select(
+                row(FILM.fields()),
+                row(FILM_ACTOR.fields()),
+                row(FILM_ACTOR.actor().fields())
+            ).from(FILM_ACTOR)
+            .join(FILM)
+            .on(FILM.FILM_ID.eq(FILM_ACTOR.FILM_ID))
+            .offset((page - 1) * pageSize)
+            .limit(pageSize)
+            .fetchInto(FilmAndActor.class);
+    }
+
+    public List<FilmAndActor> findAllFilmAndActorsUsingImplicitPathJoinOneToMany(long page, long pageSize) {
+        return dslContext.select(
+                row(FILM.fields()),
+                row(FILM.filmActor().fields()),
+                row(FILM.filmActor().actor().fields())
+            ).from(FILM)
+            .offset((page - 1) * pageSize)
+            .limit(pageSize)
+            .fetchInto(FilmAndActor.class);
+    }
+
+    public List<FilmAndActor> findAllFilmAndActorsUsingExplicitPathJoinManyToOne(long page, long pageSize) {
+        return dslContext.select(
+                row(FILM_ACTOR.film().fields()),
+                row(FILM_ACTOR.fields()),
+                row(FILM_ACTOR.actor().fields())
+            ).from(FILM_ACTOR)
+            .join(FILM_ACTOR.film())
+            .join(FILM_ACTOR.actor())
+            .offset((page - 1) * pageSize)
+            .limit(pageSize)
+            .fetchInto(FilmAndActor.class);
+    }
+
+    public List<FilmAndActor> findAllFilmAndActorsUsingExplicitPathJoinOneToMany(long page, long pageSize) {
+        return dslContext.select(
+                row(FILM.fields()),
+                row(FILM.filmActor().fields()),
+                row(FILM.filmActor().actor().fields())
+            ).from(FILM)
+            .join(FILM.filmActor())
+            .join(FILM.filmActor().actor())
+            .offset((page - 1) * pageSize)
+            .limit(pageSize)
+            .fetchInto(FilmAndActor.class);
+    }
 }
