@@ -29,9 +29,9 @@ public class ActorRepository {
     private final DSLContext dslContext;
     private final ActorDao actorDao;
 
-    public ActorRepository(DSLContext dslContext, Configuration configuration) {
+    public ActorRepository(DSLContext dslContext) {
         this.dslContext = dslContext;
-        this.actorDao = new ActorDao(configuration);
+        this.actorDao = new ActorDao(dslContext.configuration());
     }
 
     public List<Actor> findByFirstNameAndLastName(String firstName, String lastName) {
@@ -182,5 +182,12 @@ public class ActorRepository {
     public int deleteWithNowhere() {
         return dslContext.deleteFrom(ACTOR)
             .execute();
+    }
+
+    public ActorRecord findRecordByActorId(long actorId) {
+        // ActiveRecord를 생성자를 통해 생성하면 Configuration이 적용되지 않음
+        // ActorRecord actorRecord = new ActorRecord();
+        // 무조건 DSL Context를 통해 만들어야함
+        return dslContext.fetchOne(ACTOR, ACTOR.ACTOR_ID.eq(actorId));
     }
 }
